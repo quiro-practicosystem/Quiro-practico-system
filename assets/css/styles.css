@@ -12,8 +12,12 @@ body {
 .background {
   position: fixed;
   inset: 0;
-  background: url("../images/bg-medical.jpg") center/cover no-repeat;
-  filter: blur(4px);
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.3)
+    ),
+    url("../images/fondo.jpg") center / cover no-repeat;
   z-index: -1;
 }
 

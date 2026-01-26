@@ -6,52 +6,44 @@
   font-family: "Segoe UI", sans-serif;
 }
 
-/* BODY */
+/* CUERPO Y FONDO */
 body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../images/fondo.jpg") center / cover no-repeat fixed;
+  background: url("../images/fondo.jpg") center/cover no-repeat fixed;
   position: relative;
 }
 
-/* CAPA DE OPACIDAD */
+/* CAPA DE OPACIDAD DEL FONDO */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-color: rgba(255, 255, 255, 0.3); /* 70% fondo visible */
+  background: rgba(255, 255, 255, 0.3); /* 70% opacidad sobre el fondo */
   z-index: 0;
 }
 
-/* CONTENEDOR LOGIN */
+/* CONTENEDOR DEL LOGIN */
 .login-container {
   position: relative;
-  z-index: 1;
+  z-index: 1; /* para que esté encima del overlay */
   width: 100%;
   max-width: 440px;
   padding: 40px 35px;
   background: #ffffff;
   border-radius: 14px;
-  text-align: center;
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+  text-align: center;
 }
 
 /* LOGO */
 .login-logo {
-  width: 200px;
+  width: 170px;
   max-width: 80%;
   margin: 0 auto 20px;
   display: block;
-}
-
-/* TÍTULOS */
-.login-container h2 {
-  font-size: 22px;
-  color: #2c3e50;
-  margin-bottom: 25px;
-  font-weight: 600;
 }
 
 /* INPUTS */
@@ -74,7 +66,7 @@ body::before {
   width: 100%;
   padding: 12px;
   background: #2f6fed;
-  color: white;
+  color: #fff;
   border: none;
   border-radius: 6px;
   font-size: 16px;
@@ -86,7 +78,7 @@ body::before {
   background: #245cd8;
 }
 
-/* OPCIONES RECUÉRDAME Y OLVIDASTE CONTRASEÑA */
+/* OPCIONES Y AYUDA */
 .options {
   display: flex;
   justify-content: space-between;
@@ -95,27 +87,31 @@ body::before {
   margin-top: 10px;
 }
 
-.options a {
-  color: #2f80ed;
-  text-decoration: none;
-}
-
-/* AYUDA */
-.help {
-  margin-top: 20px;
-  font-size: 13px;
-}
-
+.options a,
 .help a {
   color: #2f80ed;
   text-decoration: none;
 }
 
-/* RESPONSIVE */
+.help {
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+/* TEXTOS */
+h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+/* MEDIA QUERIES */
 @media (max-width: 480px) {
   .login-container {
     padding: 30px 25px;
   }
+
   .login-logo {
     width: 150px;
   }

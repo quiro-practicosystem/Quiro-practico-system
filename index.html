@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Quiro-Práctico System</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiro-Práctico System | Login</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
 
+  <div class="background"></div>
+
   <div class="login-container">
-    <h1>Quiro-Práctico</h1>
-    <p>Inicio de sesión</p>
+    <div class="login-card">
+      <img src="assets/images/logo.png" alt="Quiro-Práctico" class="logo" />
 
-    <form>
-      <input type="email" placeholder="Correo electrónico" required>
-      <input type="password" placeholder="Contraseña" required>
-      <button type="submit">Entrar</button>
-    </form>
+      <h1>QUIRO-PRÁCTICO</h1>
+      <span class="system">SYSTEM</span>
 
-    <small>© 2026 Quiro-Práctico System</small>
+      <h2>Inicio de Sesión</h2>
+
+      <form>
+        <input type="text" placeholder="Usuario o email" required />
+        <input type="password" placeholder="Contraseña" required />
+
+        <button type="submit">Iniciar Sesión</button>
+
+        <div class="options">
+          <label>
+            <input type="checkbox" />
+            Recuérdame
+          </label>
+
+          <a href="#">¿Olvidaste tu contraseña?</a>
+        </div>
+      </form>
+
+      <p class="help">
+        ¿Necesitas ayuda? <a href="#">Contáctanos</a>
+      </p>
+    </div>
   </div>
 
 </body>

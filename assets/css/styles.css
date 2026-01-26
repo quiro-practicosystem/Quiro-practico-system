@@ -1,53 +1,125 @@
-body {
+* {
   margin: 0;
-  font-family: system-ui, -apple-system, sans-serif;
-  background: #0f172a;
-  color: #fff;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  background: url("../images/bg-medical.jpg") center/cover no-repeat;
+  filter: blur(4px);
+  z-index: -1;
+}
+
+/* CONTENEDOR */
+.login-container {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding: 20px;
 }
 
-.login-container {
-  background: #020617;
-  padding: 2rem;
-  border-radius: 12px;
+/* TARJETA */
+.login-card {
+  background: white;
   width: 100%;
-  max-width: 360px;
+  max-width: 420px;
+  padding: 35px 30px;
+  border-radius: 10px;
   text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
 }
 
+/* LOGO */
+.logo {
+  width: 90px;
+  margin-bottom: 10px;
+}
+
+/* TEXTOS */
 h1 {
-  margin-bottom: 0.5rem;
-  color: #38bdf8;
+  font-size: 22px;
+  color: #1b5e7a;
 }
 
-p {
-  margin-bottom: 1.5rem;
-  color: #cbd5f5;
+.system {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #6c8fa3;
 }
 
+h2 {
+  margin: 20px 0;
+  font-size: 18px;
+  color: #444;
+}
+
+/* INPUTS */
 input {
   width: 100%;
   padding: 12px;
-  margin-bottom: 12px;
-  border-radius: 8px;
-  border: none;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
 }
 
+input:focus {
+  outline: none;
+  border-color: #2f80ed;
+}
+
+/* BOTÓN */
 button {
   width: 100%;
   padding: 12px;
-  background: #38bdf8;
-  color: #020617;
-  font-weight: bold;
+  background: #2f80ed;
+  color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
 }
 
-small {
-  display: block;
-  margin-top: 1rem;
-  color: #94a3b8;
+button:hover {
+  background: #1c63c6;
+}
+
+/* OPCIONES */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.options a {
+  color: #2f80ed;
+  text-decoration: none;
+}
+
+/* AYUDA */
+.help {
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+.help a {
+  color: #2f80ed;
+  text-decoration: none;
+}
+
+/* PC */
+@media (min-width: 768px) {
+  .login-card {
+    padding: 40px;
+  }
 }

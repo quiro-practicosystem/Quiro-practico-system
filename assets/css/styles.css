@@ -38,11 +38,13 @@ body {
 }
 
 /* LOGO */
-.logo {
-  width: 90px;
-  margin-bottom: 10px;
-}
 
+.logo {
+  width: 70px;
+  max-width: 40%;
+  height: auto;
+  margin-bottom: 12px;
+}
 /* TEXTOS */
 h1 {
   font-size: 22px;

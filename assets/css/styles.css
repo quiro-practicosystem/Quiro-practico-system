@@ -1,134 +1,36 @@
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
-}
-
-body {
-  min-height: 100vh;
-}
-
-/* FONDO CON OPACIDAD */
-.background {
-  position: fixed;
-  inset: 0;
-  background:
-    linear-gradient(
-      rgba(255, 255, 255, 0.3),
-      rgba(255, 255, 255, 0.3)
-    ),
-    url("assets/images/fondo.jpg") center / cover no-repeat;
-  z-index: -1;
-}
-
-/* CONTENEDOR */
-.login-container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-/* TARJETA BLANCA */
-.login-card {
-  background: #ffffff;
-  width: 100%;
-  max-width: 440p
-  padding: 40px 35px;
-  border-radius: 14px;
-  text-align: center;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
-}
-
-/* LOGO */
-.login-logo {
-  width: 200px;
-  max-width: 90%;
-  margin: 0 auto 25px;
-  display: block;
-}
-
-/* TITULO */
-.login-card h2 {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 25px;
-  color: #2c3e50;
-}
-
-/* INPUTS */
-.login-card input {
-  width: 100%;
-  padding: 12px 14px;
-  margin-bottom: 15px;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  font-size: 15px;
-}
-
-.login-card input:focus {
-  outline: none;
-  border-color: #2f80ed;
-}
-
-/* BOTÓN */
-.login-card button {
-  width: 100%;
-  padding: 12px;
-  background: #2f6fed;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 5px;
-}
-
-.login-card button:hover {
-  background: #245cd8;
-}
-
-/* OPCIONES */
-.options {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 13px;
-  margin-top: 15px;
-}
-
-.options label {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.options a {
-  color: #2f80ed;
-  text-decoration: none;
-}
-
-/* AYUDA */
-.help {
-  margin-top: 22px;
-  font-size: 13px;
-}
-
-.help a {
-  color: #2f80ed;
-  text-decoration: none;
-}
-
-/* MOBILE */
-@media (max-width: 480px) {
-  .login-card {
-    padding: 30px 25px;
-  }
-
-  .login-logo {
-    width: 170px;
-  }
-}
+- { margin: 0; padding: 0; box-sizing: border-box; font-family: "Segoe UI", sans-serif; }
+ 
+body { min-height: 100vh; }
+ 
+.background { position: fixed; inset: 0; background: linear-gradient( rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3) ), url("../images/fondo.jpg") center / cover no-repeat; z-index: -1; } /* CONTENEDOR */ .login-container { min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
+ 
+/* TARJETA */ .login-card { background: #ffffff; width: 100%; max-width: 440px; padding: 40px 35px; border-radius: 14px; text-align: center; box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25); } .login-card h2 { font-size: 22px; font-weight: 600; margin-bottom: 25px; color: #2c3e50; } .login-card input { width: 100%; padding: 12px 14px; margin-bottom: 15px; border-radius: 6px; border: 1px solid #ddd; font-size: 15px; }
+ 
+.login-card button { width: 100%; padding: 12px; background: #2f6fed; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; }
+ 
+.login-card button:hover { background: #245cd8; } /* LOGO */ .login-logo { width: 170px; max-width: 80%; margin: 0 auto 20px; display: block; } /* TEXTOS */ h1 { font-size: 22px; color: #1b5e7a; }
+ 
+.system { font-size: 13px; letter-spacing: 2px; color: #6c8fa3; }
+ 
+h2 { margin: 20px 0; font-size: 18px; color: #444; }
+ 
+/* INPUTS */ input { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px; }
+ 
+input:focus { outline: none; border-color: #2f80ed; }
+ 
+/* BOTÓN */ button { width: 100%; padding: 12px; background: #2f80ed; color: white; border: none; border-radius: 6px; font-size: 15px; cursor: pointer; }
+ 
+button:hover { background: #1c63c6; }
+ 
+/* OPCIONES */ .options { display: flex; justify-content: space-between; align-items: center; font-size: 13px; margin-top: 10px; }
+ 
+.options a { color: #2f80ed; text-decoration: none; }
+ 
+/* AYUDA */ .help { margin-top: 20px; font-size: 13px; }
+ 
+.help a { color: #2f80ed; text-decoration: none; }
+ 
+/* PC */ @media (min-width: 768px) { .logo { width: 230px; } } @media (max-width: 480px) { .login-card { padding: 30px 25px; }
+ 
+.login-logo { width: 150px; } }
+ 

@@ -131,3 +131,8 @@ button:hover {
 }
   }
 }
+@media (min-width: 768px) {
+  .logo {
+    width: 170px;
+  }
+}

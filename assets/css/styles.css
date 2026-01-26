@@ -39,11 +39,11 @@ body {
 
 /* LOGO */
 .logo {
-  width: 140px;
-  max-width: 60%;
+  width: 190px;
+  max-width: 80%;
   height: auto;
   display: block;
-  margin: 0 auto 25px auto;
+  margin: 0 auto 30px auto;
 }
 /* TEXTOS */
 h1 {
@@ -121,18 +121,7 @@ button:hover {
 
 /* PC */
 @media (min-width: 768px) {
-  .login-card {
-    padding: 40px;
-  }
-
   .logo {
-    width: 85px;
-  }
-}
-  }
-}
-@media (min-width: 768px) {
-  .logo {
-    width: 170px;
+    width: 230px;
   }
 }

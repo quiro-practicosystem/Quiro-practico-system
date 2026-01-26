@@ -38,12 +38,12 @@ body {
 }
 
 /* LOGO */
-
 .logo {
-  width: 70px;
-  max-width: 40%;
+  width: 140px;
+  max-width: 60%;
   height: auto;
-  margin-bottom: 12px;
+  display: block;
+  margin: 0 auto 25px auto;
 }
 /* TEXTOS */
 h1 {

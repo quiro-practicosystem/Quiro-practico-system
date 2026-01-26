@@ -124,4 +124,10 @@ button:hover {
   .login-card {
     padding: 40px;
   }
+
+  .logo {
+    width: 85px;
+  }
+}
+  }
 }

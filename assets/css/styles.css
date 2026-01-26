@@ -39,10 +39,12 @@ body {
 
 /* LOGO */
 .logo {
-  width: 90px;
-  margin-bottom: 10px;
+  width: 190px;
+  max-width: 90%;
+  height: auto;
+  display: block;
+  margin: 0 auto 25px auto;
 }
-
 /* TEXTOS */
 h1 {
   font-size: 22px;

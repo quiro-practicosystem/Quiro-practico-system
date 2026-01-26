@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #0f172a;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  background: #020617;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 0.5rem;
+  color: #38bdf8;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  color: #cbd5f5;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #38bdf8;
+  color: #020617;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+}
+
+small {
+  display: block;
+  margin-top: 1rem;
+  color: #94a3b8;
+}

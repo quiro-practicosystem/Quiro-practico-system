@@ -31,20 +31,20 @@
               <input type="text" placeholder="Ej. Dolor lumbar">
             </div>
 
-            <div class="form-group">
-              <label>Zona principal</label>
-              <select>
-                <option>Seleccionar</option>
-                <option>Cervical</option>
-                <option>Torácica</option>
-                <option>Lumbar</option>
-                <option>Pélvica</option>
-                <option>Extremidad superior</option>
-                <option>Extremidad inferior</option>
-                <option>Otros</option>
-              </select>
-            </div>
+            
+<div class="form-group full-width">
+  <label>Zona principal</label>
 
+  <div class="checkbox-group" id="zonaPrincipal">
+    <label><input type="checkbox" value="Cervical"> Cervical</label>
+    <label><input type="checkbox" value="Torácica"> Torácica</label>
+    <label><input type="checkbox" value="Lumbar"> Lumbar</label>
+    <label><input type="checkbox" value="Pélvica"> Pélvica</label>
+    <label><input type="checkbox" value="Extremidad superior"> Extremidad superior</label>
+    <label><input type="checkbox" value="Extremidad inferior"> Extremidad inferior</label>
+    <label><input type="checkbox" value="Otros"> Otros</label>
+  </div>
+</div>
             <div class="form-group">
               <label>Otros (especificar)</label>
               <input type="text" placeholder="Ej. Costal, glúteo, abdominal">
@@ -233,6 +233,10 @@
 <script>
 const zones = document.querySelectorAll(".body-zone");
 const output = document.getElementById("selectedZones");
+const zonaCheckboxes = document.querySelectorAll(
+  "#zonaPrincipal input[type='checkbox']"
+);
+
 let selected = [];
 
 zones.forEach(zone => {
@@ -240,11 +244,21 @@ zones.forEach(zone => {
     const name = zone.dataset.zone;
     zone.classList.toggle("active");
 
-    selected.includes(name)
-      ? selected = selected.filter(z => z !== name)
-      : selected.push(name);
+    // Manejo del array visual
+    if (selected.includes(name)) {
+      selected = selected.filter(z => z !== name);
+    } else {
+      selected.push(name);
+    }
 
     output.textContent = selected.length ? selected.join(", ") : "Ninguna";
+
+    // 🔥 Sincroniza con checkboxes
+    zonaCheckboxes.forEach(cb => {
+      if (cb.value === name) {
+        cb.checked = selected.includes(name);
+      }
+    });
   });
 });
 </script>

@@ -10,43 +10,80 @@
 body {
   min-height: 100vh;
   background: linear-gradient(135deg, #eef2f7, #f9fbfd);
-  padding: 30px;
   color: #1f2937;
 }
 
-/* CONTENEDOR PRINCIPAL */
+/* CONTENEDOR PRINCIPAL FULL SCREEN */
 .form-container {
   width: 100%;
-  max-width: none; /* ❗ ocupa todo */
-  min-height: calc(100vh - 60px);
+  min-height: 100vh;
   background: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
-  padding: 40px 50px;
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
+  padding: 35px 60px;
 }
 
 /* TÍTULOS */
 .form-container h1 {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 700;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 
 .form-container h2 {
   font-size: 16px;
   font-weight: 500;
   color: #6b7280;
+  margin-bottom: 28px;
+}
+
+/* BARRA SUPERIOR */
+.patient-tabs {
+  display: flex;
+  gap: 12px;
+  background: linear-gradient(135deg, #1f5fd1, #4f8ef7);
+  padding: 14px 16px;
+  border-radius: 16px;
   margin-bottom: 35px;
+  overflow-x: auto;
+}
+
+.patient-tabs::-webkit-scrollbar {
+  height: 6px;
+}
+
+.patient-tabs::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.4);
+  border-radius: 10px;
+}
+
+/* BOTONES DE BARRA */
+.tab {
+  background: rgba(255, 255, 255, 0.18);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.tab.active {
+  background: #ffffff;
+  color: #1f5fd1;
+  font-weight: 600;
 }
 
 /* FORMULARIO */
 .patient-form {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px 26px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px 28px;
 }
 
 /* CAMPOS */
@@ -62,7 +99,7 @@ body {
   color: #374151;
 }
 
-/* INPUTS Y SELECTS */
+/* INPUTS */
 .form-group input,
 .form-group select {
   height: 46px;
@@ -85,7 +122,7 @@ body {
   box-shadow: 0 0 0 3px rgba(79, 142, 247, 0.18);
 }
 
-/* CAMPOS DE ANCHO COMPLETO */
+/* CAMPOS GRANDES */
 .full-width {
   grid-column: 1 / -1;
 }
@@ -93,7 +130,7 @@ body {
 /* BOTÓN */
 .btn-primary {
   grid-column: 1 / -1;
-  margin-top: 20px;
+  margin-top: 25px;
   height: 54px;
   border: none;
   border-radius: 14px;
@@ -108,84 +145,22 @@ body {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 30px rgba(79, 142, 247, 0.45);
-}
-
-.btn-primary:active {
-  transform: translateY(0);
-}
-
-/* BARRA SUPERIOR DE REGISTRO DE PACIENTE */
-.patient-tabs {
-  display: flex;
-  gap: 10px;
-  background: linear-gradient(135deg, #1f5fd1, #4f8ef7);
-  padding: 14px;
-  border-radius: 16px;
-  margin-bottom: 35px;
-  overflow-x: auto;
-}
-
-.patient-tabs::-webkit-scrollbar {
-  height: 6px;
-}
-.patient-tabs::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.4);
-  border-radius: 10px;
-}
-
-/* BOTONES */
-.tab {
-  background: rgba(255, 255, 255, 0.15);
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: all 0.3s ease;
-}
-
-.tab:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.tab.active {
-  background: #ffffff;
-  color: #1f5fd1;
-  font-weight: 600;
+  box-shadow: 0 18px 35px rgba(79, 142, 247, 0.45);
 }
 
 /* RESPONSIVE */
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
+  .patient-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .form-container {
+    padding: 25px;
+  }
+
   .patient-form {
     grid-template-columns: 1fr;
-  }
-
-  .form-container {
-    padding: 30px 25px;
-  }
-
-  .form-container h1 {
-    font-size: 24px;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    padding: 15px;
-  }
-
-  .btn-primary {
-    font-size: 15px;
-  }
-}
-
-/* EXTRA PREMIUM PARA PANTALLAS GRANDES */
-@media (min-width: 1200px) {
-  .patient-form {
-    grid-template-columns: repeat(3, 1fr);
   }
 }

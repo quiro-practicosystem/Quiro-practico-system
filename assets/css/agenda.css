@@ -1,97 +1,123 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+:root {
+    --primary-green: #2ecc71;
+    --dark-bg: #2c3e50;
+    --light-gray: #f4f7f6;
+    --border-color: #ddd;
 }
 
-html, body {
-  height: 100%;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: var(--light-gray);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
-.agenda-layout {
-  display: flex;
-  height: 100vh;
-  background: #f1f1f1;
+/* Header */
+.main-header {
+    background: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* SIDEBAR */
-.agenda-sidebar {
-  width: 260px;
-  background: #fff;
-  padding: 20px;
-  border-right: 1px solid #ddd;
+.logo span { color: var(--primary-green); font-weight: bold; }
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
 }
 
-.agenda-sidebar h3 {
-  font-size: 14px;
-  margin-bottom: 10px;
+nav a.active { color: var(--primary-green); border-bottom: 2px solid var(--primary-green); }
+
+/* Layout */
+.container { display: flex; flex: 1; overflow: hidden; }
+
+.sidebar {
+    width: 250px;
+    background: #fff;
+    border-right: 1px solid var(--border-color);
+    padding: 20px;
 }
 
-.agenda-sidebar select {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
+.filter-group { margin-bottom: 20px; }
+.filter-group label { display: block; font-size: 13px; margin-bottom: 5px; color: #666; }
+
+select, .btn-search {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-.btn-primary {
-  width: 100%;
-  padding: 10px;
-  background: #2bb673;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-bottom: 20px;
+.btn-search {
+    background-color: var(--primary-green);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-.btn-back {
-  display: block;
-  text-align: center;
-  padding: 10px;
-  background: #000;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
+/* Agenda Grid */
+.calendar-view { flex: 1; padding: 20px; overflow-y: auto; background: white; }
+
+.calendar-toolbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-/* MAIN */
-.agenda-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+.grid-container {
+    display: flex;
+    border: 1px solid var(--border-color);
 }
 
-.agenda-header {
-  padding: 10px;
-  background: #fff;
-  border-bottom: 1px solid #ddd;
+.time-column { width: 60px; border-right: 1px solid var(--border-color); }
+
+.time-slot {
+    height: 40px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 40px;
+    border-bottom: 1px solid #eee;
 }
 
-.agenda-header button {
-  padding: 6px 12px;
-  margin-right: 5px;
-  border: 1px solid #ccc;
-  background: #fff;
-  cursor: pointer;
+.appointments-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 40px;
+    flex: 1;
+    position: relative;
 }
 
-/* CALENDAR */
-#calendar {
-  flex: 1;
-  background: #fff;
+.doc-header {
+    background: #f9f9f9;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+    height: 40px;
+    line-height: 40px;
 }
 
-/* EVENTOS COLORES */
-.fc-event {
-  border-radius: 4px;
-  font-size: 12px;
-  padding: 2px;
+/* Appointment Styles */
+.appointment {
+    margin: 2px;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 11px;
+    color: #333;
+    border-left: 4px solid rgba(0,0,0,0.1);
+    z-index: 10;
 }
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .agenda-sidebar {
-    display: none;
-  }
-}
+.blue { background-color: #87cefa; }
+.pink { background-color: #f06292; color: white; }
+.yellow { background-color: #fff176; }
+
+.time-tag { font-weight: bold; display: block; margin-bottom: 3px; }

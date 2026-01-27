@@ -8,13 +8,23 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <!-- SIDEBAR SIMPLE -->
-  <aside class="sidebar">
-    <div class="logo">
-      <img src="assets/images/logo.png" alt="Logo" class="sidebar-logo">
-    </div>
-  </aside>
+  /* SIDEBAR AMPLIO Y LOGO GRANDE */
+.sidebar {
+  width: 240px; /* triple de antes */
+  background: #fff; /* blanco */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0; /* más espacio arriba y abajo */
+  box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+  flex-direction: column;
+}
 
+.sidebar-logo {
+  width: 160px; /* más visible */
+  height: auto;
+  margin: 0 auto;
+}
   <!-- CONTENIDO PRINCIPAL -->
   <main class="main-content">
     <header class="dashboard-header">

@@ -12,10 +12,12 @@ body {
   color: #333;
 }
 
-/* SIDEBAR AMPLIO Y LOGO GRANDE */
+/* SIDEBAR AMPLIO, LOGO GRANDE Y FONDO */
 .sidebar {
   width: 240px; /* triple de antes */
-  background: #fff; /* blanco */
+  background: 
+    url('assets/images/fondo.jpg') no-repeat center center;
+  background-size: cover; /* que cubra todo el sidebar */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,10 +26,12 @@ body {
   flex-direction: column;
 }
 
+/* LOGO */
 .sidebar-logo {
   width: 160px; /* más visible */
   height: auto;
   margin: 0 auto;
+  z-index: 1; /* asegura que se vea sobre el fondo */
 }
 
 /* MAIN CONTENT */

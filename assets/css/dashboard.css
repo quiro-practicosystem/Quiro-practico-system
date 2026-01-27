@@ -15,7 +15,7 @@ body {
   display: flex;
   min-height: 100vh;
   color: #333;
-  background: url('assets/images/fondo.jpg') no-repeat center center fixed;
+  background: url=('assets/images/fondo.jpg') no-repeat center center fixed;
   background-size: cover;
   position: relative;
 }

@@ -10,15 +10,12 @@ body {
   min-height: 100vh;
   background: #f5f6fa;
   color: #333;
-}
 
 /* FONDO DEL DASHBOARD */
-body {
   background: url('assets/images/fondo-dashboard.jpg') no-repeat center center fixed;
   background-size: cover; /* ocupa toda la pantalla */
   position: relative;
   min-height: 100vh;
-}
 
 /* OPCIONAL: capa semitransparente sobre el fondo para destacar contenido */
 body::before {

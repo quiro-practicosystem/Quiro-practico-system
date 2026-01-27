@@ -1,6 +1,3 @@
-/* ============================ */
-/* RESET Y FUENTES              */
-/* ============================ */
 * {
   margin: 0;
   padding: 0;
@@ -8,59 +5,37 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* ============================ */
-/* BODY Y FONDO                 */
-/* ============================ */
 body {
   display: flex;
   min-height: 100vh;
+  background: #f5f6fa;
   color: #333;
-  background: url=('assets/images/fondo.jpg') no-repeat center center fixed;
-  background-size: cover;
-  position: relative;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(255, 255, 255, 0.7); /* capa semitransparente */
-  z-index: -1;
-}
-
-/* ============================ */
-/* SIDEBAR AMPLIO Y LOGO        */
-/* ============================ */
+/* SIDEBAR SIMPLE */
 .sidebar {
-  width: 720px; /* triple del tamaño anterior */
-  background: #fff;
+  width: 80px; /* lateral más pequeño */
+  background: #fff; /* blanco */
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 0;
+  padding: 20px 0;
   box-shadow: 2px 0 10px rgba(0,0,0,0.05);
-  flex-direction: column;
 }
 
 .sidebar-logo {
-  width: 400px; /* logo más grande y visible */
+  width: 60px;
   height: auto;
-  margin: 0 auto;
 }
 
-/* ============================ */
-/* MAIN CONTENT                 */
-/* ============================ */
+/* MAIN CONTENT */
 .main-content {
   flex: 1;
   padding: 30px 40px;
   overflow-y: auto;
 }
 
-/* ============================ */
-/* DASHBOARD HEADER             */
-/* ============================ */
+/* HEADER */
 .dashboard-header {
   display: flex;
   justify-content: space-between;
@@ -86,12 +61,10 @@ body::before {
   transform: translateY(-2px);
 }
 
-/* ============================ */
-/* ACCIONES RÁPIDAS (CARDS)    */
-/* ============================ */
+/* ACCIONES RÁPIDAS */
 .quick-actions {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4,1fr);
   gap: 25px;
   margin-bottom: 40px;
 }
@@ -121,9 +94,7 @@ body::before {
   box-shadow: 0 20px 35px rgba(0,0,0,0.15);
 }
 
-/* ============================ */
-/* GRÁFICAS                     */
-/* ============================ */
+/* GRÁFICAS */
 .charts {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -137,9 +108,7 @@ body::before {
   box-shadow: 0 15px 30px rgba(0,0,0,0.08);
 }
 
-/* ============================ */
-/* RESPONSIVE                   */
-/* ============================ */
+/* RESPONSIVE */
 @media (max-width: 1024px) {
   .quick-actions { grid-template-columns: repeat(2,1fr); }
   .charts { grid-template-columns: 1fr; }

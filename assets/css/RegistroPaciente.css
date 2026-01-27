@@ -35,27 +35,44 @@ body {
   margin-bottom: 28px;
 }
 
-/* BARRA SUPERIOR */
+/* =========================
+   BARRA SUPERIOR CON LOGO
+========================= */
 .patient-tabs {
   display: flex;
-  gap: 12px;
+  align-items: center;
+  gap: 25px;
   background: linear-gradient(135deg, #1f5fd1, #4f8ef7);
-  padding: 14px 16px;
-  border-radius: 16px;
+  padding: 18px 24px;
+  border-radius: 18px;
   margin-bottom: 35px;
   overflow-x: auto;
 }
 
-.patient-tabs::-webkit-scrollbar {
+/* LOGO */
+.tabs-logo img {
+  height: 72px;
+  object-fit: contain;
+}
+
+/* CONTENEDOR DE TABS */
+.tabs-nav {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+}
+
+/* SCROLL DISCRETO */
+.tabs-nav::-webkit-scrollbar {
   height: 6px;
 }
 
-.patient-tabs::-webkit-scrollbar-thumb {
+.tabs-nav::-webkit-scrollbar-thumb {
   background: rgba(255,255,255,0.4);
   border-radius: 10px;
 }
 
-/* BOTONES DE BARRA */
+/* BOTONES */
 .tab {
   background: rgba(255, 255, 255, 0.18);
   border: none;
@@ -155,6 +172,17 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .patient-tabs {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tabs-logo img {
+    height: 58px;
+  }
+}
+
 @media (max-width: 700px) {
   .form-container {
     padding: 25px;
@@ -163,17 +191,4 @@ body {
   .patient-form {
     grid-template-columns: 1fr;
   }
-}
-/* HEADER CON LOGO */
-.page-header {
-  width: 100%;
-  max-width: 1400px;
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.header-logo {
-  height: 60px;
-  object-fit: contain;
 }

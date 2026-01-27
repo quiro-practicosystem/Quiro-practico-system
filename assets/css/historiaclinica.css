@@ -237,7 +237,51 @@ select:focus {
   border-color: var(--primary);
   color: var(--primary-dark);
 }
+/* =========================
+   SILUETA HUMANA
+========================= */
+.body-map.human {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
 
+/* Filas izquierda / derecha */
+.body-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  width: 100%;
+}
+
+/* Ajustes por zona */
+.body-zone.head {
+  width: 60%;
+}
+
+.body-zone.thoracic,
+.body-zone.lumbar,
+.body-zone.pelvic {
+  width: 70%;
+}
+
+.body-zone.shoulder,
+.body-zone.arm,
+.body-zone.elbow,
+.body-zone.leg,
+.body-zone.knee {
+  width: 100%;
+}
+
+/* Diferenciar lados */
+.body-zone.left {
+  text-align: left;
+}
+
+.body-zone.right {
+  text-align: right;
+}
 /* =========================
    ZONAS SELECCIONADAS
 ========================= */

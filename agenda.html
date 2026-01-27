@@ -2,62 +2,86 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>AgendaPro Clone - Funcional</title>
-    <link rel="stylesheet" href="assets/css/agenda.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgendaPro Clone</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header class="main-header">
-        <div class="logo">agenda<span>pro</span></div>
+        <div class="logo">agendapro</div>
+        <nav>
+            <a href="#">Resumen</a>
+            <a href="#" class="active">Calendario</a>
+            <a href="#">Ventas</a>
+            <a href="#">Productos</a>
+            <a href="#">Clientes</a>
+            <a href="#">Reportes</a>
+            <a href="#">Administración</a>
+        </nav>
         <div class="header-right">
-            <input type="text" placeholder="Busqueda Rápida" class="search-bar">
+            <i class="fas fa-search"></i>
             <i class="fas fa-user-circle"></i>
+            <i class="fas fa-print"></i>
+            <i class="fas fa-cog"></i>
         </div>
     </header>
 
-    <div class="app-container">
+    <main class="app-container">
         <aside class="sidebar">
-            <div class="filter-box">
+            <div class="filter-group">
                 <label>Elige el Prestador</label>
-                <select id="prestadorFilter"><option>Todos</option></select>
+                <select><option>Todos</option></select>
             </div>
-            <div class="mini-calendar" id="miniCal">
-                </div>
-        </aside>
-
-        <main class="main-content">
-            <div class="calendar-header">
-                <h2 id="currentDateDisplay">Lunes, 07 Dic 2020</h2>
-                <div class="button-group">
-                    <button class="btn btn-green" onclick="openModal()"><i class="fas fa-plus"></i> Agendar Reserva</button>
-                    <button class="btn btn-red"><i class="fas fa-ban"></i> Bloquear</button>
+            
+            <div class="filter-group">
+                <label>Elige el tipo de vista:</label>
+                <div class="view-toggle">
+                    <button class="active">Calendario</button>
+                    <button>Lista</button>
                 </div>
             </div>
 
-            <div class="agenda-wrapper">
-                <div class="time-gutter" id="timeGutter"></div>
-                <div class="agenda-grid" id="agendaGrid">
+            <button class="btn-search">Buscador de Horas</button>
+
+            <div class="mini-calendar">
+                <div class="calendar-header">Dic 2020</div>
+                <div class="calendar-grid" id="miniCalendar">
                     </div>
             </div>
-        </main>
-    </div>
+        </aside>
 
-    <div id="appointmentModal" class="modal">
-        <div class="modal-content">
-            <h3>Nueva Cita Médica</h3>
-            <input type="text" id="patientName" placeholder="Nombre del Paciente">
-            <select id="docSelect">
-                <option value="0">Camilo</option>
-                <option value="1">Francisca</option>
-                <option value="2">Juan</option>
-                <option value="3">María Paz</option>
-            </select>
-            <input type="time" id="startTime">
-            <div class="modal-buttons">
-                <button onclick="saveAppointment()" class="btn btn-green">Guardar</button>
-                <button onclick="closeModal()" class="btn">Cancelar</button>
+        <section class="calendar-view">
+            <div class="calendar-top-bar">
+                <h2 id="currentDateDisplay">Lunes, 07 Dic 2020</h2>
+                <div class="nav-controls">
+                    <button><i class="fas fa-chevron-left"></i></button>
+                    <button class="btn-today">Hoy</button>
+                    <button><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-refresh"><i class="fas fa-sync"></i></button>
+                    <button class="btn-add"><i class="fas fa-user-plus"></i> Agregar Reserva</button>
+                    <button class="btn-block"><i class="fas fa-times"></i> Bloquear Horario</button>
+                    <button class="btn-pay"><i class="fas fa-dollar-sign"></i> Agregar Pago</button>
+                </div>
             </div>
-        </div>
-    </div>
+
+            <div class="schedule-container">
+                <div class="specialist-header">
+                    <div class="time-col-header"></div>
+                    <div class="spec-name">Camilo</div>
+                    <div class="spec-name">Francisca</div>
+                    <div class="spec-name">Juan</div>
+                    <div class="spec-name">María Paz</div>
+                    <div class="spec-name">Valentina</div>
+                </div>
+
+                <div class="grid-body" id="calendarGrid">
+                    </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>

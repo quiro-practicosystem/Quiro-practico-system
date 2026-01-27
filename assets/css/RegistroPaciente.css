@@ -1,23 +1,27 @@
-/* RESET SUAVE */
+/* RESET */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* CONTENEDOR GENERAL DEL REGISTRO */
-.form-wrapper {
-  display: flex;
-  justify-content: center;
-  padding: 40px 20px;
+/* FONDO GENERAL */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2f7, #f9fbfd);
+  padding: 30px;
+  color: #1f2937;
 }
 
 /* CONTENEDOR PRINCIPAL */
 .form-container {
   width: 100%;
-  max-width: 1100px;
+  max-width: none; /* ❗ ocupa todo */
+  min-height: calc(100vh - 60px);
   background: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
-  padding: 40px 45px;
+  padding: 40px 50px;
   box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.6);
@@ -35,7 +39,7 @@
   font-size: 16px;
   font-weight: 500;
   color: #6b7280;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 /* FORMULARIO */
@@ -58,7 +62,7 @@
   color: #374151;
 }
 
-/* INPUTS */
+/* INPUTS Y SELECTS */
 .form-group input,
 .form-group select {
   height: 46px;
@@ -81,7 +85,7 @@
   box-shadow: 0 0 0 3px rgba(79, 142, 247, 0.18);
 }
 
-/* CAMPOS COMPLETOS */
+/* CAMPOS DE ANCHO COMPLETO */
 .full-width {
   grid-column: 1 / -1;
 }
@@ -90,7 +94,7 @@
 .btn-primary {
   grid-column: 1 / -1;
   margin-top: 20px;
-  height: 52px;
+  height: 54px;
   border: none;
   border-radius: 14px;
   background: linear-gradient(135deg, #4f8ef7, #2563eb);
@@ -107,32 +111,35 @@
   box-shadow: 0 16px 30px rgba(79, 142, 247, 0.45);
 }
 
-/* ===== BARRA SUPERIOR AZUL ===== */
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* BARRA SUPERIOR DE REGISTRO DE PACIENTE */
 .patient-tabs {
   display: flex;
   gap: 10px;
   background: linear-gradient(135deg, #1f5fd1, #4f8ef7);
-  padding: 12px;
-  border-radius: 14px;
-  margin-bottom: 30px;
+  padding: 14px;
+  border-radius: 16px;
+  margin-bottom: 35px;
   overflow-x: auto;
 }
 
 .patient-tabs::-webkit-scrollbar {
   height: 6px;
 }
-
 .patient-tabs::-webkit-scrollbar-thumb {
   background: rgba(255,255,255,0.4);
   border-radius: 10px;
 }
 
-/* BOTONES DE PESTAÑAS */
+/* BOTONES */
 .tab {
   background: rgba(255, 255, 255, 0.15);
   border: none;
   color: white;
-  padding: 10px 18px;
+  padding: 10px 20px;
   border-radius: 999px;
   font-size: 14px;
   font-weight: 500;
@@ -167,7 +174,18 @@
 }
 
 @media (max-width: 480px) {
+  body {
+    padding: 15px;
+  }
+
   .btn-primary {
     font-size: 15px;
+  }
+}
+
+/* EXTRA PREMIUM PARA PANTALLAS GRANDES */
+@media (min-width: 1200px) {
+  .patient-form {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiro-Practico - Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h1>Quiro-Practico</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Pacientes</a></li>
+        <li><a href="#">Notas SOAP</a></li>
+        <li><a href="#">Pruebas ortopédicas</a></li>
+        <li><a href="#">Dermatomos</a></li>
+        <li><a href="#">Configuración</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Contenido principal -->
+  <main class="main-content">
+    <header>
+      <h2>Bienvenido, [Nombre del Usuario]</h2>
+    </header>
+
+    <section class="dashboard">
+      <!-- Calendario -->
+      <div class="calendar-section">
+        <h3>Agenda de citas</h3>
+        <input type="text" id="calendar" placeholder="Selecciona fecha">
+      </div>
+
+      <!-- Opciones rápidas -->
+      <div class="quick-options">
+        <div class="card">Registrar paciente</div>
+        <div class="card">Notas SOAP</div>
+        <div class="card">Pruebas ortopédicas</div>
+        <div class="card">Dermatomos</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    flatpickr("#calendar", {
+      inline: true,
+      enableTime: true,
+      dateFormat: "Y-m-d H:i",
+    });
+  </script>
+</body>
+</html>

@@ -1,14 +1,11 @@
 body {
-  display: flex;
-  min-height: 100vh;
+  margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #f1f3f4; /* gris Google */
+  background: #f3f4f6;
 }
 
-/* MAIN */
-.main-content {
-  flex: 1;
-  padding: 20px 30px;
+.agenda-wrapper {
+  padding: 15px;
 }
 
 /* HEADER */
@@ -16,81 +13,61 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
-.agenda-header h1 {
-  font-size: 24px;
+.agenda-header h2 {
+  font-size: 20px;
   font-weight: 600;
 }
 
-.back-btn {
-  text-decoration: none;
-  background: #000;
-  color: white;
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-size: 14px;
+.agenda-controls button {
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  margin-left: 5px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-/* CONTENEDOR CALENDARIO */
-.calendar-container {
+/* CALENDARIO */
+#calendar {
   background: white;
   border-radius: 12px;
   padding: 10px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* FULLCALENDAR estilo Google */
-.fc {
+/* COLUMNAS DE PRESTADORES */
+.fc-resource {
+  font-weight: 600;
   font-size: 14px;
-}
-
-.fc-toolbar-title {
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.fc-button {
-  background: #1a73e8;
-  border: none;
-}
-
-.fc-button:hover {
-  background: #1558b0;
-}
-
-.fc-button-primary:not(:disabled).fc-button-active {
-  background: #1558b0;
 }
 
 /* EVENTOS */
 .fc-event {
-  background-color: #1a73e8;
   border: none;
   border-radius: 6px;
-  padding: 2px;
-  font-size: 13px;
+  font-size: 12px;
+  padding: 3px;
 }
+
+/* COLORES TIPO AGENDAPRO */
+.event-azul { background: #7dd3fc; }
+.event-rosa { background: #f9a8d4; }
+.event-verde { background: #bef264; }
+.event-amarillo { background: #fde68a; }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  .sidebar {
-    display: none;
-  }
-
-  .main-content {
-    padding: 15px;
-  }
-
   .agenda-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 8px;
   }
 
-  .fc-toolbar {
-    flex-wrap: wrap;
-    gap: 10px;
+  #calendar {
+    font-size: 12px;
   }
 }

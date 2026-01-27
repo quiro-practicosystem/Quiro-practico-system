@@ -265,7 +265,25 @@ select:focus {
 .left-panel::-webkit-scrollbar-thumb:hover {
   background: #b6c3d6;
 }
+/* =========================
+   CHECKBOX MÉDICO MEJORADO
+========================= */
+.checkbox-group input[type="checkbox"] {
+  accent-color: var(--primary);
+  cursor: pointer;
+}
 
+.checkbox-group label {
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: .2s;
+}
+
+.checkbox-group input[type="checkbox"]:checked + span,
+.checkbox-group label:has(input:checked) {
+  background: rgba(30,136,229,.12);
+  color: var(--primary-dark);
+}
 /* =========================
    RESPONSIVE
 ========================= */

@@ -164,3 +164,16 @@ body {
     grid-template-columns: 1fr;
   }
 }
+/* HEADER CON LOGO */
+.page-header {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-logo {
+  height: 60px;
+  object-fit: contain;
+}

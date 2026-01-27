@@ -8,24 +8,10 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  /* SIDEBAR AMPLIO Y LOGO GRANDE */
-
-  .sidebar {
-  width: 240px; /* triple de antes */
-  background: #fff; /* blanco */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 0; /* más espacio arriba y abajo */
-  box-shadow: 2px 0 10px rgba(0,0,0,0.05);
-  flex-direction: column;
+@media (max-width: 768px) {
+  .sidebar { display: none; }
 }
 
-.sidebar-logo {
-  width: 160px; /* más visible */
-  height: auto;
-  margin: 0 auto;
-}
   <!-- CONTENIDO PRINCIPAL -->
   <main class="main-content">
     <header class="dashboard-header">
@@ -35,7 +21,28 @@
       </div>
       <a href="index.html" class="logout-btn">Cerrar sesión</a>
     </header>
+/* SIDEBAR AMPLIO Y LOGO GRANDE */
+.sidebar {
+  width: 240px; /* ancho del rectángulo blanco */
+  background: #fff; /* color blanco */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0; /* más espacio arriba y abajo */
+  box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+  flex-direction: column;
+}
 
+.sidebar-logo {
+  width: 160px; /* ancho del logo */
+  height: auto;
+  margin: 0 auto;
+}
+
+/* RESPONSIVE PARA MÓVIL */
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+}
     <!-- ACCIONES RÁPIDAS -->
     <section class="quick-actions">
       <div class="card" onclick="window.location.href='agenda.html'">

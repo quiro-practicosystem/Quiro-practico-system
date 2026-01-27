@@ -255,6 +255,32 @@
   </form>
 
 </div>
+<script>
+  const zones = document.querySelectorAll(".body-zone");
+  const output = document.getElementById("selectedZones");
 
+  let selected = [];
+
+  zones.forEach(zone => {
+    zone.addEventListener("click", () => {
+      const name = zone.dataset.zone;
+
+      zone.classList.toggle("active");
+
+      if (selected.includes(name)) {
+        selected = selected.filter(z => z !== name);
+      } else {
+        selected.push(name);
+      }
+
+      output.textContent = selected.length
+        ? selected.join(", ")
+        : "Ninguna";
+
+      // 🔥 Aquí después conectamos con el formulario
+      console.log("Zonas seleccionadas:", selected);
+    });
+  });
+</script>
 </body>
 </html>

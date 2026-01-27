@@ -12,6 +12,23 @@ body {
   color: #333;
 }
 
+/* FONDO DEL DASHBOARD */
+body {
+  background: url('assets/images/fondo-dashboard.jpg') no-repeat center center fixed;
+  background-size: cover; /* ocupa toda la pantalla */
+  position: relative;
+  min-height: 100vh;
+}
+
+/* OPCIONAL: capa semitransparente sobre el fondo para destacar contenido */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(255, 255, 255, 0.7); /* cambia la opacidad */
+  z-index: -1;
+}
 /* SIDEBAR AMPLIO Y LOGO GRANDE */
 .sidebar {
   width: 240px; /* triple de antes */

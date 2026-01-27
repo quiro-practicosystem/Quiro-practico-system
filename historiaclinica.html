@@ -15,72 +15,116 @@
 
   <form class="clinical-form">
 
-    <!-- MOTIVO DE CONSULTA -->
+    <!-- 1. MOTIVO DE CONSULTA -->
     <section class="form-section">
       <h3>1. Motivo de Consulta</h3>
 
-      <div class="form-grid">
-        <div class="form-group">
-          <label>Motivo principal</label>
-          <input type="text" placeholder="Ej. Dolor lumbar">
-        </div>
+      <!-- DOLOR 1 -->
+      <div class="subsection">
+        <h4>Dolor / Molestia</h4>
 
-        <div class="form-group">
-          <label>Zona principal</label>
-          <select>
-            <option>Seleccionar</option>
-            <option>Cervical</option>
-            <option>Torácica</option>
-            <option>Lumbar</option>
-            <option>Pélvica</option>
-          </select>
-        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Descripción del dolor</label>
+            <input type="text" placeholder="Ej. Dolor lumbar">
+          </div>
 
-        <div class="form-group">
-          <label>Irradiación</label>
-          <input type="text" placeholder="Ej. Miembro inferior derecho">
-        </div>
+          <div class="form-group">
+            <label>Zona principal</label>
+            <select>
+              <option>Seleccionar</option>
+              <option>Cervical</option>
+              <option>Torácica</option>
+              <option>Lumbar</option>
+              <option>Pélvica</option>
+              <option>Extremidad superior</option>
+              <option>Extremidad inferior</option>
+              <option>Otros</option>
+            </select>
+          </div>
 
-        <div class="form-group">
-          <label>Tiempo de evolución</label>
-          <input type="text" placeholder="Ej. 3 semanas">
-        </div>
-      </div>
-    </section>
+          <div class="form-group">
+            <label>Otros (especificar)</label>
+            <input type="text" placeholder="Ej. Costal, abdominal, glúteo">
+          </div>
 
-    <!-- CARACTERÍSTICAS DEL DOLOR -->
-    <section class="form-section">
-      <h3>2. Características del Dolor</h3>
+          <div class="form-group">
+            <label>Irradiación</label>
+            <input type="text" placeholder="Ej. Pierna derecha">
+          </div>
 
-      <div class="form-grid">
-        <div class="form-group">
-          <label>Tipo de dolor</label>
-          <select>
-            <option>Punzante</option>
-            <option>Opresivo</option>
-            <option>Ardor</option>
-            <option>Eléctrico</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>EVA (0–10)</label>
-          <input type="number" min="0" max="10" placeholder="Ej. 8">
-        </div>
-
-        <div class="form-group full-width">
-          <label>Síntomas asociados</label>
-          <div class="checkbox-group">
-            <label><input type="checkbox"> Rigidez</label>
-            <label><input type="checkbox"> Hormigueo</label>
-            <label><input type="checkbox"> Debilidad</label>
-            <label><input type="checkbox"> Dificultad para estar sentado</label>
+          <div class="form-group">
+            <label>Tiempo de evolución</label>
+            <input type="text" placeholder="Ej. 3 semanas">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ANÁLISIS POSTURAL -->
+    <!-- 2. CARACTERÍSTICAS DEL DOLOR -->
+    <section class="form-section">
+      <h3>2. Características del Dolor</h3>
+
+      <div class="form-group full-width">
+        <label>Tipos de dolor (puede seleccionar más de uno)</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox"> Punzante</label>
+          <label><input type="checkbox"> Urente</label>
+          <label><input type="checkbox"> Opresivo</label>
+          <label><input type="checkbox"> Tirante</label>
+          <label><input type="checkbox"> Calambre</label>
+        </div>
+      </div>
+
+      <div class="form-group full-width">
+        <label>EVA por tipo de dolor</label>
+        <div class="eva-grid">
+          <div>
+            <label>Punzante</label>
+            <input type="number" min="0" max="10" placeholder="0–10">
+          </div>
+          <div>
+            <label>Urente</label>
+            <input type="number" min="0" max="10" placeholder="0–10">
+          </div>
+          <div>
+            <label>Opresivo</label>
+            <input type="number" min="0" max="10" placeholder="0–10">
+          </div>
+          <div>
+            <label>Tirante</label>
+            <input type="number" min="0" max="10" placeholder="0–10">
+          </div>
+          <div>
+            <label>Calambre</label>
+            <input type="number" min="0" max="10" placeholder="0–10">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group full-width">
+        <label>Síntomas asociados</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox"> Rigidez</label>
+          <label><input type="checkbox"> Hormigueo</label>
+          <label><input type="checkbox"> Debilidad</label>
+        </div>
+      </div>
+
+      <div class="form-group full-width">
+        <label>Dificultad para (selección múltiple)</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox"> Sentarse</label>
+          <label><input type="checkbox"> Acostarse</label>
+          <label><input type="checkbox"> Pararse</label>
+          <label><input type="checkbox"> Caminar</label>
+          <label><input type="checkbox"> Correr</label>
+          <label><input type="checkbox"> Manejar</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ANÁLISIS POSTURAL -->
     <section class="form-section">
       <h3>3. Análisis Postural y Dinámico</h3>
 
@@ -100,6 +144,7 @@
             <option>Normal</option>
             <option>Hiperlordosis</option>
             <option>Hipolordosis</option>
+            <option>Anteriorización de cabeza</option>
           </select>
         </div>
 
@@ -114,60 +159,61 @@
       </div>
     </section>
 
-    <!-- HALLAZGOS -->
+    <!-- 4. HALLAZGOS -->
     <section class="form-section">
       <h3>4. Hallazgos Palpatorios y Segmentarios</h3>
 
+      <div class="form-group full-width">
+        <label>Regiones afectadas (selección múltiple)</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox"> Cervical</label>
+          <label><input type="checkbox"> Torácica</label>
+          <label><input type="checkbox"> Lumbar</label>
+          <label><input type="checkbox"> Pélvica</label>
+        </div>
+      </div>
+
       <div class="form-grid">
         <div class="form-group">
-          <label>Región</label>
-          <select>
-            <option>Cervical</option>
-            <option>Torácica</option>
-            <option>Lumbar</option>
-            <option>Pélvica</option>
-          </select>
+          <label>Niveles vertebrales</label>
+          <input type="text" placeholder="Ej. C2, T6-T7, L5">
         </div>
 
         <div class="form-group">
-          <label>Nivel vertebral</label>
-          <input type="text" placeholder="Ej. C2, L5">
-        </div>
-
-        <div class="form-group">
-          <label>Restricción</label>
+          <label>Restricción principal</label>
           <select>
             <option>Rotación</option>
             <option>Flexión</option>
             <option>Extensión</option>
+            <option>Lateroflexión</option>
           </select>
         </div>
       </div>
     </section>
 
-    <!-- IMPRESIÓN CLÍNICA -->
+    <!-- 5. IMPRESIÓN CLÍNICA -->
     <section class="form-section">
       <h3>5. Impresión Clínica y Plan</h3>
 
-      <div class="form-grid">
-        <div class="form-group full-width">
-          <label>Diagnóstico Quiropráctico</label>
-          <input type="text" placeholder="Ej. Complejo de Subluxación Vertebral L5">
-        </div>
+      <div class="form-group full-width">
+        <label>Diagnóstico Quiropráctico</label>
+        <input type="text" placeholder="Ej. Complejo de Subluxación Vertebral L5">
+      </div>
 
-        <div class="form-group">
-          <label>Técnica</label>
-          <select>
-            <option>Diversified</option>
-            <option>Gonstead</option>
-            <option>Activator</option>
-          </select>
+      <div class="form-group full-width">
+        <label>Técnica(s) aplicada(s)</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox"> Diversified</label>
+          <label><input type="checkbox"> Gonstead</label>
+          <label><input type="checkbox"> Activator</label>
+          <label><input type="checkbox"> Thompson</label>
+          <label><input type="checkbox"> SOT</label>
         </div>
+      </div>
 
-        <div class="form-group">
-          <label>Frecuencia</label>
-          <input type="text" placeholder="Ej. 3 veces por semana">
-        </div>
+      <div class="form-group">
+        <label>Frecuencia</label>
+        <input type="text" placeholder="Ej. 3 veces por semana">
       </div>
     </section>
 

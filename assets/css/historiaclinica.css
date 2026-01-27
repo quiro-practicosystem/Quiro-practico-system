@@ -283,6 +283,38 @@ select:focus {
   text-align: right;
 }
 /* =========================
+   BODY MAP CARD
+========================= */
+.body-map-container {
+  background: linear-gradient(180deg, #f9fbff, #f1f5f9);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: inset 0 0 0 1px var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* header del selector */
+.body-map-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.body-map-header h3 {
+  margin: 0;
+  font-size: 16px;
+  color: var(--primary-dark);
+}
+
+/* footer */
+.body-map-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+/* =========================
    ZONAS SELECCIONADAS
 ========================= */
 .selected-zones {

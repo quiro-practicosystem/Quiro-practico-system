@@ -4,38 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard - Quiro-Práctico</title>
-  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="dashboard.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <!-- SIDEBAR -->
+  <!-- SIDEBAR SIMPLE -->
   <aside class="sidebar">
     <div class="logo">
-      <h1>Quiro-Práctico</h1>
+      <img src="assets/images/logo.png" alt="Logo" class="sidebar-logo">
     </div>
-    <nav>
-      <ul>
-        <li><i class="fa-solid fa-house"></i><a href="#">Inicio</a></li>
-        <li><i class="fa-solid fa-calendar-days"></i><a href="#">Agenda</a></li>
-        <li><i class="fa-solid fa-user-plus"></i><a href="#">Registrar paciente</a></li>
-        <li><i class="fa-solid fa-users"></i><a href="#">Pacientes</a></li>
-        <li><i class="fa-solid fa-chart-line"></i><a href="#">Reportes</a></li>
-        <li><i class="fa-solid fa-gear"></i><a href="#">Configuración</a></li>
-      </ul>
-    </nav>
   </aside>
 
   <!-- CONTENIDO PRINCIPAL -->
   <main class="main-content">
-    <header>
-      <header class="dashboard-header">
-  <div class="welcome-text">
-    <h2>¡Bienvenido, [Nombre]!</h2>
-    <p>Resumen rápido del sistema</p>
-  </div>
-  <!-- El botón ahora es un enlace -->
-  <a href="index.html" class="logout-btn">Cerrar sesión</a>
+    <header class="dashboard-header">
+      <div class="welcome-text">
+        <h2>¡Bienvenido, [Nombre]!</h2>
+        <p>Resumen rápido del sistema</p>
+      </div>
+      <a href="index.html" class="logout-btn">Cerrar sesión</a>
     </header>
 
     <!-- ACCIONES RÁPIDAS -->
@@ -71,46 +58,32 @@
     </section>
   </main>
 
-  <!-- SCRIPT GRÁFICAS -->
   <script>
     const ctxIngresos = document.getElementById('chartIngresos').getContext('2d');
     const chartIngresos = new Chart(ctxIngresos, {
       type: 'bar',
       data: {
-        labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
-        datasets: [{
-          label: 'Ingresos',
-          data: [5000, 7000, 6500, 8000, 9000, 10000],
-          backgroundColor: '#4f8ef7',
-          borderRadius: 6
-        }]
+        labels: ['Ene','Feb','Mar','Abr','May','Jun'],
+        datasets: [{ label: 'Ingresos', data: [5000,7000,6500,8000,9000,10000], backgroundColor: '#4f8ef7', borderRadius: 6 }]
       },
-      options: {
-        responsive: true,
-        plugins: { legend: { display: false } },
-        scales: { y: { beginAtZero: true } }
-      }
+      options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
     });
 
     const ctxPacientes = document.getElementById('chartPacientes').getContext('2d');
     const chartPacientes = new Chart(ctxPacientes, {
       type: 'line',
       data: {
-        labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
+        labels: ['Ene','Feb','Mar','Abr','May','Jun'],
         datasets: [{
           label: 'Pacientes',
-          data: [12, 18, 14, 20, 22, 25],
+          data: [12,18,14,20,22,25],
           borderColor: '#4f8ef7',
           backgroundColor: 'rgba(79,142,247,0.2)',
           fill: true,
           tension: 0.4
         }]
       },
-      options: {
-        responsive: true,
-        plugins: { legend: { display: false } },
-        scales: { y: { beginAtZero: true } }
-      }
+      options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
     });
   </script>
 </body>

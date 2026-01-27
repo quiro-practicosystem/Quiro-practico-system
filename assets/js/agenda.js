@@ -1,46 +1,76 @@
-const agendaBody = document.getElementById("agendaBody");
-
+const specialists = ["Camilo", "Francisca", "Juan", "María Paz", "Valentina"];
 const startHour = 9;
 const endHour = 20;
-const interval = 30;
-const providers = 5;
 
-// Crear grid
-for (let hour = startHour; hour < endHour; hour++) {
-  for (let min = 0; min < 60; min += interval) {
+// Datos de ejemplo simulando la imagen
+const appointments = [
+    { spec: 0, start: "10:00", end: "11:30", name: "Carlos", desc: "Consulta general", type: "type-blue" },
+    { spec: 1, start: "10:00", end: "11:30", name: "Carlos", desc: "Consulta básica", type: "type-pink" },
+    { spec: 2, start: "09:30", end: "12:00", name: "Constanza", desc: "Tratamiento básico", type: "type-yellow" },
+    { spec: 4, start: "09:00", end: "14:30", name: "Mañana Libre", desc: "", type: "type-grey" }
+];
 
-    // Columna hora
-    const timeCell = document.createElement("div");
-    timeCell.className = "time-slot";
-    timeCell.innerText = `${hour.toString().padStart(2, "0")}:${min === 0 ? "00" : min}`;
-    agendaBody.appendChild(timeCell);
+function initCalendar() {
+    const grid = document.getElementById('calendarGrid');
+    
+    // 1. Generar celdas de tiempo y slots
+    for (let h = startHour; h <= endHour; h++) {
+        for (let m of ['00', '30']) {
+            if (h === endHour && m === '30') break;
 
-    // Columnas prestadores
-    for (let p = 0; p < providers; p++) {
-      const cell = document.createElement("div");
-      cell.className = "cell";
-      agendaBody.appendChild(cell);
+            // Columna de hora
+            const timeDiv = document.createElement('div');
+            timeDiv.className = 'time-cell';
+            timeDiv.textContent = `${h}:${m}`;
+            grid.appendChild(timeDiv);
+
+            // Celdas vacías para cada especialista
+            for (let i = 0; i < specialists.length; i++) {
+                const slot = document.createElement('div');
+                slot.className = 'slot-cell';
+                grid.appendChild(slot);
+            }
+        }
     }
-  }
+
+    renderAppointments();
 }
 
-// Ejemplo de citas
-function addAppointment(providerIndex, startRow, duration, text, color) {
-  const index = startRow * (providers + 1) + providerIndex + 1;
-  const cell = agendaBody.children[index];
+function renderAppointments() {
+    const grid = document.getElementById('calendarGrid');
+    
+    appointments.forEach(app => {
+        const div = document.createElement('div');
+        div.className = `appointment ${app.type}`;
+        
+        // Calcular posición
+        const [hStart, mStart] = app.start.split(':').map(Number);
+        const [hEnd, mEnd] = app.end.split(':').map(Number);
+        
+        const startTotalMin = (hStart - startHour) * 60 + mStart;
+        const durationMin = ((hEnd * 60) + mEnd) - ((hStart * 60) + mStart);
+        
+        // 40px es la altura de 30min (ver CSS)
+        const top = (startTotalMin / 30) * 40;
+        const height = (durationMin / 30) * 40;
+        
+        // Ancho: 100% / 5 especialistas (dejando fuera la col de horas)
+        const left = `calc(60px + ( (100% - 60px) / 5 ) * ${app.spec})`;
+        const width = `calc((100% - 60px) / 5 - 4px)`;
 
-  const app = document.createElement("div");
-  app.className = `appointment ${color}`;
-  app.style.top = "2px";
-  app.style.height = `${duration * 40 - 4}px`;
-  app.innerHTML = text;
-
-  cell.appendChild(app);
+        div.style.top = `${top}px`;
+        div.style.height = `${height}px`;
+        div.style.left = left;
+        div.style.width = width;
+        
+        div.innerHTML = `
+            <span class="time-tag"><i class="far fa-clock"></i> ${app.start} - ${app.end}</span>
+            <strong><i class="fas fa-user"></i> ${app.name}</strong><br>
+            <span>${app.desc}</span>
+        `;
+        
+        grid.appendChild(div);
+    });
 }
 
-// Citas demo
-addAppointment(0, 2, 3, "Carlos<br>Consulta general<br>10:00 - 11:30", "blue");
-addAppointment(1, 2, 3, "Carlos<br>Consulta básica<br>10:00 - 11:30", "pink");
-addAppointment(2, 1, 4, "Constanza<br>Tratamiento básico", "yellow");
-addAppointment(3, 3, 2, "Raúl<br>Tratamiento simple", "pink");
-addAppointment(4, 5, 3, "María Paz<br>Consulta general", "blue");
+document.addEventListener('DOMContentLoaded', initCalendar);

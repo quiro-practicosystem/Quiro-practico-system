@@ -1,101 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda Médica - Estilo AgendaPro</title>
-    <link rel="stylesheet" href="assets/css/agenda.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <title>Agenda de Citas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="main-header">
-        <div class="logo">agenda<span>pro</span></div>
-        <nav>
-            <a href="#">Resumen</a>
-            <a href="#" class="active">Calendario</a>
-            <a href="#">Ventas</a>
-            <a href="#">Productos</a>
-            <a href="#">Clientes</a>
-        </nav>
-        <div class="header-icons">
-            <i class="fas fa-search"></i>
-            <i class="fas fa-user-circle"></i>
-            <i class="fas fa-cog"></i>
-        </div>
-    </header>
 
-    <div class="container">
-        <aside class="sidebar">
-            <div class="filter-group">
-                <label>Elige el Prestador</label>
-                <select><option>Todos</option></select>
-            </div>
-            
-            <div class="filter-group">
-                <label>Elige el tipo de vista:</label>
-                <div class="view-toggle">
-                    <button class="active">Calendario</button>
-                    <button>Lista</button>
-                </div>
-            </div>
+<header class="topbar">
+  <button class="btn-dashboard">← Dashboard</button>
+  <h1>Calendario</h1>
+</header>
 
-            <button class="btn-search">Buscar de Horas</button>
+<div class="container">
 
-            <div class="mini-calendar">
-                <div class="cal-header">Dic 2020</div>
-                <div class="cal-grid">
-                    <span>Lu</span><span>Ma</span><span>Mi</span><span>Ju</span><span>Vi</span><span>Sa</span><span>Do</span>
-                    <span class="empty"></span><span class="empty"></span><span class="empty"></span><span class="empty"></span><span>1</span><span>2</span><span>3</span>
-                    <span>4</span><span>5</span><span class="selected">7</span><span>8</span><span>9</span><span>10</span><span>11</span>
-                </div>
-            </div>
-        </aside>
-
-        <main class="calendar-view">
-            <div class="calendar-toolbar">
-                <div class="current-date">Lunes, 07 Dic 2020</div>
-                <div class="actions">
-                    <button class="btn-action green"><i class="fas fa-plus"></i> Agendar Reserva</button>
-                    <button class="btn-action red"><i class="fas fa-ban"></i> Bloquear Horario</button>
-                </div>
-            </div>
-
-            <div class="grid-container">
-                <div class="time-column">
-                    <div class="time-slot">09:00</div>
-                    <div class="time-slot">09:30</div>
-                    <div class="time-slot">10:00</div>
-                    <div class="time-slot">10:30</div>
-                    <div class="time-slot">11:00</div>
-                    <div class="time-slot">11:30</div>
-                    <div class="time-slot">12:00</div>
-                    <div class="time-slot">12:30</div>
-                </div>
-                
-                <div class="appointments-grid">
-                    <div class="doc-header">Camilo</div>
-                    <div class="doc-header">Francisca</div>
-                    <div class="doc-header">Juan</div>
-                    <div class="doc-header">María Paz</div>
-
-                    <div class="appointment blue" style="grid-column: 1; grid-row: 3 / 5;">
-                        <span class="time-tag">10:00 - 11:00</span>
-                        <p>Carlos - Consulta General</p>
-                    </div>
-
-                    <div class="appointment pink" style="grid-column: 2; grid-row: 3 / 4;">
-                        <span class="time-tag">10:00 - 10:30</span>
-                        <p>Camilo - Consulta Básica</p>
-                    </div>
-
-                    <div class="appointment yellow" style="grid-column: 3; grid-row: 2 / 5;">
-                        <span class="time-tag">09:30 - 11:00</span>
-                        <p>Constanza - Tratamiento</p>
-                    </div>
-                </div>
-            </div>
-        </main>
+  <!-- PANEL IZQUIERDO -->
+  <aside class="sidebar">
+    <div class="calendar-header">
+      <button id="prevMonth">‹</button>
+      <span id="monthYear"></span>
+      <button id="nextMonth">›</button>
     </div>
-    <script src="assets/js/agenda.js"></script>
+    <div id="miniCalendar" class="mini-calendar"></div>
+  </aside>
+
+  <!-- AGENDA -->
+  <main class="agenda">
+
+    <!-- CABECERA PRESTADORES -->
+    <div class="agenda-header">
+      <div class="time-column"></div>
+      <div class="provider">Camilo</div>
+      <div class="provider">Francisca</div>
+      <div class="provider">Juan</div>
+      <div class="provider">María Paz</div>
+      <div class="provider">Valentina</div>
+    </div>
+
+    <!-- GRID -->
+    <div class="agenda-body" id="agendaBody"></div>
+
+  </main>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

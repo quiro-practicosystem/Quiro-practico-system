@@ -1,3 +1,6 @@
+/* ============================ */
+/* RESET Y FUENTES              */
+/* ============================ */
 * {
   margin: 0;
   padding: 0;
@@ -5,52 +8,59 @@
   font-family: 'Poppins', sans-serif;
 }
 
+/* ============================ */
+/* BODY Y FONDO                 */
+/* ============================ */
 body {
   display: flex;
   min-height: 100vh;
-  background: #f5f6fa;
   color: #333;
-
-/* FONDO DEL DASHBOARD */
   background: url('assets/images/fondo-dashboard.jpg') no-repeat center center fixed;
-  background-size: cover; /* ocupa toda la pantalla */
+  background-size: cover;
   position: relative;
-  min-height: 100vh;
+}
 
-/* OPCIONAL: capa semitransparente sobre el fondo para destacar contenido */
 body::before {
   content: "";
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(255, 255, 255, 0.7); /* cambia la opacidad */
+  background-color: rgba(255, 255, 255, 0.7); /* capa semitransparente */
   z-index: -1;
 }
-/* SIDEBAR AMPLIO Y LOGO GRANDE */
+
+/* ============================ */
+/* SIDEBAR AMPLIO Y LOGO        */
+/* ============================ */
 .sidebar {
-  width: 240px; /* triple de antes */
-  background: #fff; /* blanco */
+  width: 720px; /* triple del tamaño anterior */
+  background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 0; /* más espacio arriba y abajo */
+  padding: 40px 0;
   box-shadow: 2px 0 10px rgba(0,0,0,0.05);
   flex-direction: column;
 }
 
 .sidebar-logo {
-  width: 160px; /* más visible */
+  width: 400px; /* logo más grande y visible */
   height: auto;
   margin: 0 auto;
 }
-/* MAIN CONTENT */
+
+/* ============================ */
+/* MAIN CONTENT                 */
+/* ============================ */
 .main-content {
   flex: 1;
   padding: 30px 40px;
   overflow-y: auto;
 }
 
-/* HEADER */
+/* ============================ */
+/* DASHBOARD HEADER             */
+/* ============================ */
 .dashboard-header {
   display: flex;
   justify-content: space-between;
@@ -76,10 +86,12 @@ body::before {
   transform: translateY(-2px);
 }
 
-/* ACCIONES RÁPIDAS */
+/* ============================ */
+/* ACCIONES RÁPIDAS (CARDS)    */
+/* ============================ */
 .quick-actions {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 25px;
   margin-bottom: 40px;
 }
@@ -109,7 +121,9 @@ body::before {
   box-shadow: 0 20px 35px rgba(0,0,0,0.15);
 }
 
-/* GRÁFICAS */
+/* ============================ */
+/* GRÁFICAS                     */
+/* ============================ */
 .charts {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -123,7 +137,9 @@ body::before {
   box-shadow: 0 15px 30px rgba(0,0,0,0.08);
 }
 
-/* RESPONSIVE */
+/* ============================ */
+/* RESPONSIVE                   */
+/* ============================ */
 @media (max-width: 1024px) {
   .quick-actions { grid-template-columns: repeat(2,1fr); }
   .charts { grid-template-columns: 1fr; }

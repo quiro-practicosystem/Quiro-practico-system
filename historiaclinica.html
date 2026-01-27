@@ -234,6 +234,14 @@
     <div class="body-map-container">
       <h3>Selector Corporal</h3>
 
+      <div class="body-map-header">
+  <h3>Selector Corporal</h3>
+
+  <select id="selectionMode">
+    <option value="principal">Dolor principal</option>
+    <option value="irradiacion">Irradiación</option>
+  </select>
+</div>
       <div class="body-map human">
 
   <!-- CABEZA / CUELLO -->
@@ -278,7 +286,10 @@
   </div>
 
 </div>
-
+<div class="body-map-footer">
+  <button class="view-btn active" data-view="anterior">Vista anterior</button>
+  <button class="view-btn" data-view="posterior">Vista posterior</button>
+</div>
       <div class="selected-zones">
         <strong>Zonas seleccionadas:</strong>
         <span id="selectedZones">Ninguna</span>

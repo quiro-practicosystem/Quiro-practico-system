@@ -12,22 +12,23 @@ body {
   color: #333;
 }
 
-/* SIDEBAR SIMPLE */
+/* SIDEBAR AMPLIO Y LOGO GRANDE */
 .sidebar {
-  width: 80px; /* lateral más pequeño */
+  width: 240px; /* triple de antes */
   background: #fff; /* blanco */
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 0;
+  padding: 40px 0; /* más espacio arriba y abajo */
   box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+  flex-direction: column;
 }
 
 .sidebar-logo {
-  width: 60px;
+  width: 160px; /* más visible */
   height: auto;
+  margin: 0 auto;
 }
-
 /* MAIN CONTENT */
 .main-content {
   flex: 1;

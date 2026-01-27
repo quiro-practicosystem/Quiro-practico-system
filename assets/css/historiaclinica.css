@@ -238,7 +238,97 @@ select:focus {
   background: var(--primary);
   border-radius: 10px;
 }
+/* ===========================
+   BODY MAP
+=========================== */
+.body-map-container {
+  width: 100%;
+  max-width: 360px;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
 
+.body-map-container h3 {
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+/* SILUETA */
+.body-map {
+  position: relative;
+  width: 140px;
+  height: 420px;
+  margin: 0 auto 20px;
+  background: linear-gradient(
+    to bottom,
+    #cfd8dc,
+    #eceff1
+  );
+  border-radius: 80px;
+}
+
+/* ZONAS */
+.body-zone {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 0.75rem;
+  padding: 6px;
+  cursor: pointer;
+  background: rgba(30,136,229,0.15);
+  color: var(--primary);
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+/* POSICIONES */
+.cervical {
+  top: 40px;
+  height: 40px;
+}
+
+.thoracic {
+  top: 90px;
+  height: 110px;
+}
+
+.lumbar {
+  top: 220px;
+  height: 80px;
+}
+
+.sacral {
+  top: 310px;
+  height: 60px;
+}
+
+/* HOVER */
+.body-zone:hover {
+  background: rgba(30,136,229,0.3);
+}
+
+/* ACTIVO */
+.body-zone.active {
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--accent)
+  );
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* TEXTO */
+.selected-zones {
+  font-size: 0.85rem;
+  color: var(--text-dark);
+}
 /* ===========================
    RESPONSIVE
 =========================== */

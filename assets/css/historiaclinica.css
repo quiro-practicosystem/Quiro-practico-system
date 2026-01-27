@@ -1,343 +1,113 @@
-/* ===========================
-   VARIABLES DE COLOR
-=========================== */
 :root {
-  --primary: #1e88e5;
-  --secondary: #e3f2fd;
-  --accent: #00bfa5;
-  --text-dark: #263238;
-  --text-light: #607d8b;
-  --border: #e0e0e0;
-  --bg: #f4f6f8;
-  --white: #ffffff;
-  --shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-/* ===========================
-   RESET
-=========================== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  --primary:#1e88e5;
+  --accent:#00bfa5;
+  --bg:#f4f6f8;
+  --white:#fff;
+  --shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
 body {
-  background: var(--bg);
-  color: var(--text-dark);
-  min-height: 100vh;
+  margin:0;
+  font-family:Inter, system-ui;
+  background:var(--bg);
 }
 
-/* ===========================
-   LAYOUT GENERAL 50 / 50
-=========================== */
 .form-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:100vh;
 }
 
-/* ===========================
-   PANEL IZQUIERDO - FORMULARIO
-=========================== */
-.clinical-form {
-  background: var(--white);
-  padding: 40px 48px;
-  overflow-y: auto;
+/* LEFT */
+.left-panel {
+  background:var(--white);
+  padding:40px;
+  overflow-y:auto;
 }
 
-h1 {
-  font-size: 2.2rem;
-  color: var(--primary);
-  margin-bottom: 6px;
-}
-
-h2 {
-  font-size: 1rem;
-  color: var(--text-light);
-  margin-bottom: 32px;
+/* RIGHT */
+.right-panel {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg,#e3f2fd,#fff);
 }
 
 .form-section {
-  background: var(--secondary);
-  border-radius: 16px;
-  padding: 24px;
-  margin-bottom: 28px;
+  background:#e3f2fd;
+  padding:24px;
+  border-radius:16px;
+  margin-bottom:24px;
 }
 
-.form-section h3 {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-  color: var(--primary);
-}
-
-/* ===========================
-   SUBSECCIÓN
-=========================== */
-.subsection h4 {
-  font-size: 1rem;
-  margin-bottom: 16px;
-  color: var(--accent);
-}
-
-/* ===========================
-   GRID DE FORMULARIOS
-=========================== */
 .form-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
+input, select {
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #ccc;
 }
 
-.form-group label {
-  font-size: 0.85rem;
-  margin-bottom: 6px;
-  color: var(--text-light);
-}
-
-/* ===========================
-   INPUTS
-=========================== */
-input,
-select {
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  font-size: 0.95rem;
-  transition: all 0.25s ease;
-}
-
-input:focus,
-select:focus {
-  outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(30,136,229,0.15);
-}
-
-/* ===========================
-   CHECKBOXES
-=========================== */
 .checkbox-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
 }
 
-.checkbox-group label {
-  background: var(--white);
-  border: 1px solid var(--border);
-  padding: 10px 14px;
-  border-radius: 12px;
-  font-size: 0.85rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.2s ease;
-}
-
-.checkbox-group label:hover {
-  border-color: var(--primary);
-}
-
-.checkbox-group input {
-  accent-color: var(--primary);
-}
-
-/* ===========================
-   EVA GRID
-=========================== */
-.eva-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 14px;
-}
-
-.eva-grid label {
-  font-size: 0.8rem;
-  margin-bottom: 4px;
-}
-
-/* ===========================
-   FULL WIDTH
-=========================== */
-.full-width {
-  grid-column: 1 / -1;
-}
-
-/* ===========================
-   BOTÓN
-=========================== */
 .btn-primary {
-  width: 100%;
-  padding: 16px;
-  border-radius: 14px;
-  border: none;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  color: white;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  margin-top: 12px;
-  box-shadow: var(--shadow);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width:100%;
+  padding:16px;
+  border:none;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  color:#fff;
+  font-weight:600;
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 40px rgba(0,0,0,0.12);
-}
-
-/* ===========================
-   PANEL DERECHO - SELECTOR CORPORAL
-=========================== */
-.form-container::after {
-  content: "";
-  background: linear-gradient(
-    180deg,
-    #e3f2fd 0%,
-    #ffffff 100%
-  );
-}
-
-/* Contenedor visible para el selector */
-.body-selector {
-  padding: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.body-placeholder {
-  width: 100%;
-  height: 80%;
-  border-radius: 24px;
-  border: 2px dashed var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  color: var(--primary);
-  background: rgba(30,136,229,0.05);
-}
-
-/* ===========================
-   SCROLL BONITO
-=========================== */
-.clinical-form::-webkit-scrollbar {
-  width: 8px;
-}
-
-.clinical-form::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 10px;
-}
-/* ===========================
-   BODY MAP
-=========================== */
+/* BODY MAP */
 .body-map-container {
-  width: 100%;
-  max-width: 360px;
-  background: #ffffff;
-  padding: 24px;
-  border-radius: 24px;
-  box-shadow: var(--shadow);
-  text-align: center;
+  background:#fff;
+  padding:30px;
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  text-align:center;
 }
 
-.body-map-container h3 {
-  color: var(--primary);
-  margin-bottom: 20px;
-}
-
-/* SILUETA */
 .body-map {
-  position: relative;
-  width: 140px;
-  height: 420px;
-  margin: 0 auto 20px;
-  background: linear-gradient(
-    to bottom,
-    #cfd8dc,
-    #eceff1
-  );
-  border-radius: 80px;
+  position:relative;
+  width:140px;
+  height:420px;
+  margin:auto;
+  background:#cfd8dc;
+  border-radius:80px;
 }
 
-/* ZONAS */
 .body-zone {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90px;
-  border-radius: 20px;
-  text-align: center;
-  font-size: 0.75rem;
-  padding: 6px;
-  cursor: pointer;
-  background: rgba(30,136,229,0.15);
-  color: var(--primary);
-  transition: all 0.25s ease;
-  user-select: none;
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  width:90px;
+  padding:6px;
+  border-radius:20px;
+  cursor:pointer;
+  background:rgba(30,136,229,.2);
 }
 
-/* POSICIONES */
-.cervical {
-  top: 40px;
-  height: 40px;
-}
-
-.thoracic {
-  top: 90px;
-  height: 110px;
-}
-
-.lumbar {
-  top: 220px;
-  height: 80px;
-}
-
-.sacral {
-  top: 310px;
-  height: 60px;
-}
-
-/* HOVER */
-.body-zone:hover {
-  background: rgba(30,136,229,0.3);
-}
-
-/* ACTIVO */
 .body-zone.active {
-  background: linear-gradient(
-    135deg,
-    var(--primary),
-    var(--accent)
-  );
-  color: #fff;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  color:#fff;
 }
 
-/* TEXTO */
-.selected-zones {
-  font-size: 0.85rem;
-  color: var(--text-dark);
-}
-/* ===========================
-   RESPONSIVE
-=========================== */
-@media (max-width: 900px) {
-  .form-container {
-    grid-template-columns: 1fr;
-  }
+.cervical{top:40px}
+.thoracic{top:100px;height:100px}
+.lumbar{top:230px}
+.sacral{top:300px}
 
-  .form-container::after {
-    display: none;
-  }
+/* MOBILE */
+@media(max-width:900px){
+  .form-container{grid-template-columns:1fr}
 }

@@ -1,111 +1,95 @@
-/* ===========================
-   VARIABLES DE DISEÑO
-=========================== */
+/* =========================
+   VARIABLES BASE
+========================= */
 :root {
   --primary: #1e88e5;
-  --primary-soft: #e3f2fd;
-  --accent: #00bfa5;
-  --bg: #f5f7fa;
-  --white: #ffffff;
-  --text-dark: #263238;
-  --text-light: #607d8b;
-  --border: #e0e0e0;
-  --shadow: 0 12px 32px rgba(0,0,0,0.08);
+  --primary-dark: #1565c0;
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --border: #e0e6ed;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --radius: 14px;
+  --shadow: 0 10px 25px rgba(0,0,0,.08);
 }
 
-/* ===========================
-   RESET
-=========================== */
+/* =========================
+   RESET BÁSICO
+========================= */
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
 }
 
 body {
+  margin: 0;
   background: var(--bg);
-  color: var(--text-dark);
-  min-height: 100vh;
+  color: var(--text);
 }
 
-/* ===========================
-   LAYOUT GENERAL
-=========================== */
+/* =========================
+   CONTENEDOR GENERAL
+========================= */
 .form-container {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  min-height: 100vh;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+  padding: 24px;
+  height: 100vh;
 }
 
-/* ===========================
+/* =========================
    PANEL IZQUIERDO
-=========================== */
+========================= */
 .left-panel {
-  background: var(--white);
-  padding: 42px 48px;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
   overflow-y: auto;
 }
 
-h1 {
-  font-size: 2.3rem;
+.left-panel h1 {
+  margin: 0;
+  font-size: 28px;
   color: var(--primary);
-  margin-bottom: 4px;
 }
 
-h2 {
-  font-size: 1rem;
-  color: var(--text-light);
-  margin-bottom: 36px;
+.left-panel h2 {
+  margin: 6px 0 24px;
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 15px;
 }
 
-/* ===========================
-   FORMULARIO
-=========================== */
-.clinical-form {
-  display: flex;
-  flex-direction: column;
-}
-
-/* ===========================
+/* =========================
    SECCIONES
-=========================== */
+========================= */
 .form-section {
-  background: var(--primary-soft);
-  border-radius: 18px;
-  padding: 26px;
-  margin-bottom: 30px;
-  border-left: 6px solid var(--primary);
+  margin-bottom: 32px;
 }
 
 .form-section h3 {
-  font-size: 1.15rem;
-  color: var(--primary);
-  margin-bottom: 22px;
-}
-
-/* ===========================
-   SUBSECCIÓN
-=========================== */
-.subsection {
-  background: rgba(255,255,255,0.7);
-  padding: 20px;
-  border-radius: 14px;
+  font-size: 18px;
+  margin-bottom: 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+  color: var(--primary-dark);
 }
 
 .subsection h4 {
-  font-size: 1rem;
-  margin-bottom: 16px;
-  color: var(--accent);
+  margin: 12px 0;
+  font-size: 15px;
+  color: var(--text);
 }
 
-/* ===========================
-   GRID FORMULARIO
-=========================== */
+/* =========================
+   GRID Y GRUPOS
+========================= */
 .form-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
+  gap: 16px;
 }
 
 .form-group {
@@ -113,207 +97,182 @@ h2 {
   flex-direction: column;
 }
 
-.form-group label {
-  font-size: 0.8rem;
-  color: var(--text-light);
-  margin-bottom: 6px;
+.form-group.full-width {
+  grid-column: 1 / -1;
 }
 
-/* ===========================
-   INPUTS & SELECT
-=========================== */
+/* =========================
+   LABELS & INPUTS
+========================= */
+label {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: var(--muted);
+}
+
 input,
 select {
-  padding: 12px 14px;
-  border-radius: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
   border: 1px solid var(--border);
-  font-size: 0.95rem;
-  background: var(--white);
-  transition: all 0.25s ease;
-}
-
-input::placeholder {
-  color: #b0bec5;
+  font-size: 14px;
+  outline: none;
+  transition: .2s;
 }
 
 input:focus,
 select:focus {
-  outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(30,136,229,0.15);
+  box-shadow: 0 0 0 2px rgba(30,136,229,.15);
 }
 
-/* ===========================
-   CHECKBOXES PREMIUM
-=========================== */
+/* =========================
+   CHECKBOX GROUP
+========================= */
 .checkbox-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 12px 20px;
+  padding: 8px 0;
 }
 
 .checkbox-group label {
-  background: var(--white);
-  border: 1px solid var(--border);
-  padding: 10px 14px;
-  border-radius: 14px;
-  font-size: 0.8rem;
+  font-size: 14px;
+  color: var(--text);
   display: flex;
   align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  gap: 6px;
 }
 
-.checkbox-group label:hover {
-  border-color: var(--primary);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-}
-
-.checkbox-group input {
-  accent-color: var(--primary);
-}
-
-/* ===========================
+/* =========================
    EVA GRID
-=========================== */
+========================= */
 .eva-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 14px;
+  gap: 12px;
+}
+
+.eva-grid div {
+  background: #f9fafb;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
 }
 
 .eva-grid label {
-  font-size: 0.75rem;
-  color: var(--text-light);
+  font-size: 12px;
   margin-bottom: 4px;
 }
 
-/* ===========================
-   FULL WIDTH
-=========================== */
-.full-width {
-  grid-column: 1 / -1;
-}
-
-/* ===========================
+/* =========================
    BOTÓN
-=========================== */
+========================= */
 .btn-primary {
-  margin-top: 18px;
-  padding: 18px;
-  border-radius: 16px;
-  border: none;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  color: #fff;
-  font-size: 1rem;
+  width: 100%;
+  margin-top: 24px;
+  padding: 14px;
+  font-size: 15px;
   font-weight: 600;
+  border: none;
+  border-radius: 12px;
   cursor: pointer;
-  box-shadow: var(--shadow);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  box-shadow: 0 8px 20px rgba(30,136,229,.35);
+  transition: .2s;
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 42px rgba(0,0,0,0.15);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(30,136,229,.45);
 }
 
-/* ===========================
+/* =========================
    PANEL DERECHO
-=========================== */
+========================= */
 .right-panel {
-  background: linear-gradient(180deg, #e3f2fd, #ffffff);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
-}
-
-/* ===========================
-   BODY MAP
-=========================== */
-.body-map-container {
-  background: var(--white);
-  padding: 28px;
-  border-radius: 30px;
+  background: var(--card);
+  border-radius: var(--radius);
   box-shadow: var(--shadow);
-  text-align: center;
-  width: 100%;
-  max-width: 360px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .body-map-container h3 {
+  margin-top: 0;
+  text-align: center;
   color: var(--primary);
-  margin-bottom: 20px;
 }
 
-/* SILUETA */
+/* =========================
+   BODY MAP
+========================= */
 .body-map {
-  position: relative;
-  width: 140px;
-  height: 420px;
-  margin: 0 auto 20px;
-  background: linear-gradient(to bottom, #cfd8dc, #eceff1);
-  border-radius: 80px;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 14px;
+  margin: 24px 0;
 }
 
-/* ZONAS */
 .body-zone {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 92px;
-  border-radius: 20px;
-  padding: 6px;
-  font-size: 0.75rem;
+  text-align: center;
+  padding: 18px;
+  border-radius: 12px;
+  border: 2px solid var(--border);
   cursor: pointer;
-  background: rgba(30,136,229,0.15);
-  color: var(--primary);
-  transition: all 0.25s ease;
-  user-select: none;
+  font-weight: 600;
+  background: #f9fafb;
+  transition: .2s;
 }
 
 .body-zone:hover {
-  background: rgba(30,136,229,0.3);
+  border-color: var(--primary);
 }
 
-/* POSICIONES */
-.cervical { top: 40px; height: 40px; }
-.thoracic { top: 90px; height: 110px; }
-.lumbar { top: 220px; height: 80px; }
-.sacral { top: 310px; height: 60px; }
-
-/* ACTIVO */
 .body-zone.active {
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  color: white;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  background: rgba(30,136,229,.12);
+  border-color: var(--primary);
+  color: var(--primary-dark);
 }
 
-/* TEXTO */
+/* =========================
+   ZONAS SELECCIONADAS
+========================= */
 .selected-zones {
-  font-size: 0.85rem;
-  color: var(--text-dark);
+  margin-top: 12px;
+  padding: 12px;
+  background: #f1f5f9;
+  border-radius: 10px;
+  font-size: 14px;
+  text-align: center;
 }
 
-/* ===========================
-   SCROLL ELEGANTE
-=========================== */
+/* =========================
+   SCROLL BONITO
+========================= */
 .left-panel::-webkit-scrollbar {
   width: 8px;
 }
 
 .left-panel::-webkit-scrollbar-thumb {
-  background: var(--primary);
+  background: #cfd8e3;
   border-radius: 10px;
 }
 
-/* ===========================
+.left-panel::-webkit-scrollbar-thumb:hover {
+  background: #b6c3d6;
+}
+
+/* =========================
    RESPONSIVE
-=========================== */
-@media (max-width: 900px) {
+========================= */
+@media (max-width: 1024px) {
   .form-container {
     grid-template-columns: 1fr;
+    height: auto;
   }
 
   .right-panel {

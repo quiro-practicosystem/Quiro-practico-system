@@ -5,27 +5,48 @@
   <title>Agenda</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- FullCalendar + Scheduler -->
   <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css" rel="stylesheet">
-
   <link rel="stylesheet" href="assets/css/agenda.css">
 </head>
 <body>
 
-<main class="agenda-wrapper">
+<div class="agenda-layout">
 
-  <header class="agenda-header">
-    <h2>Agenda</h2>
-    <div class="agenda-controls">
-      <button id="todayBtn">Hoy</button>
-      <button id="prevBtn">‹</button>
-      <button id="nextBtn">›</button>
-    </div>
-  </header>
+  <!-- PANEL IZQUIERDO -->
+  <aside class="agenda-sidebar">
+    <h4>Elige el prestador</h4>
+    <select>
+      <option>Todos</option>
+      <option>Camilo</option>
+      <option>Francisca</option>
+      <option>Juan</option>
+    </select>
 
-  <div id="calendar"></div>
+    <h4>Tipo de vista</h4>
+    <button class="active">Calendario</button>
+    <button>Lista</button>
+  </aside>
 
-</main>
+  <!-- CONTENIDO -->
+  <main class="agenda-main">
+
+    <header class="agenda-header">
+      <button onclick="location.href='dashboard.html'" class="back-btn">
+        ← Volver al dashboard
+      </button>
+
+      <div class="calendar-controls">
+        <button id="prev">‹</button>
+        <button id="today">Hoy</button>
+        <button id="next">›</button>
+      </div>
+    </header>
+
+    <div id="calendar"></div>
+
+  </main>
+
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
 <script src="assets/js/agenda.js"></script>

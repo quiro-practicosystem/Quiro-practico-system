@@ -304,39 +304,59 @@ const zones = document.querySelectorAll(".body-zone");
 const output = document.getElementById("selectedZones");
 const modeSelect = document.getElementById("selectionMode");
 
+// Checkboxes de Zona Principal
+const zonaCheckboxes = document.querySelectorAll("#zonaPrincipal input[type='checkbox']");
+
+// Input de irradiación
 const irradiacionInput = document.querySelector(
   'input[placeholder="Ej. Pierna derecha"]'
 );
 
+// Arrays para almacenar seleccionados
 let principal = [];
 let irradiacion = [];
 
 zones.forEach(zone => {
   zone.addEventListener("click", () => {
-    const name = zone.dataset.zone;
+    const region = zone.dataset.zone;
+    const side = zone.dataset.side;
+    const label = `${region} ${side}`;
     const mode = modeSelect.value;
 
     if (mode === "principal") {
       zone.classList.toggle("principal");
 
-      principal.includes(name)
-        ? principal = principal.filter(z => z !== name)
-        : principal.push(name);
+      // Actualiza array de principal
+      if (principal.includes(label)) {
+        principal = principal.filter(z => z !== label);
+      } else {
+        principal.push(label);
+      }
+
+      // Sincroniza con checkboxes
+      zonaCheckboxes.forEach(cb => {
+        if (cb.value === label || cb.value === region) {
+          cb.checked = principal.includes(label);
+        }
+      });
 
     } else {
       zone.classList.toggle("irradiacion");
 
-      irradiacion.includes(name)
-        ? irradiacion = irradiacion.filter(z => z !== name)
-        : irradiacion.push(name);
+      // Actualiza array de irradiación
+      if (irradiacion.includes(label)) {
+        irradiacion = irradiacion.filter(z => z !== label);
+      } else {
+        irradiacion.push(label);
+      }
 
+      // Llena input de irradiación
       irradiacionInput.value = irradiacion.join(", ");
     }
 
-    output.textContent =
-      [...principal, ...irradiacion].length
-        ? [...principal, ...irradiacion].join(", ")
-        : "Ninguna";
+    // Actualiza el texto visual de zonas seleccionadas
+    const allSelected = [...principal, ...irradiacion];
+    output.textContent = allSelected.length ? allSelected.join(", ") : "Ninguna";
   });
 });
 </script>

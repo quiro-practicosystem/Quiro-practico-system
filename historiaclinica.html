@@ -10,7 +10,7 @@
 
 <div class="form-container">
 
-  <!-- ================= LEFT PANEL ================= -->
+  <!-- PANEL IZQUIERDO -->
   <div class="left-panel">
 
     <h1>Historia Clínica</h1>
@@ -28,7 +28,7 @@
           <div class="form-grid">
             <div class="form-group">
               <label>Descripción del dolor</label>
-              <input type="text">
+              <input type="text" placeholder="Ej. Dolor lumbar">
             </div>
 
             <div class="form-group">
@@ -46,24 +46,24 @@
             </div>
 
             <div class="form-group">
-              <label>Otros</label>
-              <input type="text">
+              <label>Otros (especificar)</label>
+              <input type="text" placeholder="Ej. Costal, glúteo, abdominal">
             </div>
 
             <div class="form-group">
               <label>Irradiación</label>
-              <input type="text">
+              <input type="text" placeholder="Ej. Pierna derecha">
             </div>
 
             <div class="form-group">
               <label>Tiempo de evolución</label>
-              <input type="text">
+              <input type="text" placeholder="Ej. 3 semanas">
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 2. CARACTERÍSTICAS -->
+      <!-- 2. CARACTERÍSTICAS DEL DOLOR -->
       <section class="form-section">
         <h3>2. Características del Dolor</h3>
 
@@ -79,45 +79,129 @@
         </div>
 
         <div class="form-group full-width">
-          <label>EVA por tipo</label>
+          <label>EVA por tipo de dolor</label>
           <div class="eva-grid">
-            <input type="number" min="0" max="10" placeholder="Punzante">
-            <input type="number" min="0" max="10" placeholder="Urente">
-            <input type="number" min="0" max="10" placeholder="Opresivo">
-            <input type="number" min="0" max="10" placeholder="Tirante">
-            <input type="number" min="0" max="10" placeholder="Calambre">
+            <div><label>Punzante</label><input type="number" min="0" max="10"></div>
+            <div><label>Urente</label><input type="number" min="0" max="10"></div>
+            <div><label>Opresivo</label><input type="number" min="0" max="10"></div>
+            <div><label>Tirante</label><input type="number" min="0" max="10"></div>
+            <div><label>Calambre</label><input type="number" min="0" max="10"></div>
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <label>Síntomas asociados</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox"> Rigidez</label>
+            <label><input type="checkbox"> Hormigueo</label>
+            <label><input type="checkbox"> Debilidad</label>
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <label>Dificultad para</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox"> Sentarse</label>
+            <label><input type="checkbox"> Acostarse</label>
+            <label><input type="checkbox"> Pararse</label>
+            <label><input type="checkbox"> Caminar</label>
+            <label><input type="checkbox"> Correr</label>
+            <label><input type="checkbox"> Manejar</label>
           </div>
         </div>
       </section>
 
-      <!-- 3. POSTURAL -->
+      <!-- 3. ANÁLISIS POSTURAL -->
       <section class="form-section">
-        <h3>3. Análisis Postural</h3>
+        <h3>3. Análisis Postural y Dinámico</h3>
 
         <div class="form-grid">
-          <select><option>Plano frontal</option></select>
-          <select><option>Plano sagital</option></select>
-          <select><option>Marcha</option></select>
+          <div class="form-group">
+            <label>Plano frontal</label>
+            <select>
+              <option>Normal</option>
+              <option>Desviación izquierda</option>
+              <option>Desviación derecha</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Plano sagital</label>
+            <select>
+              <option>Normal</option>
+              <option>Hiperlordosis</option>
+              <option>Hipolordosis</option>
+              <option>Anteriorización de cabeza</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Marcha</label>
+            <select>
+              <option>Normal</option>
+              <option>Antálgica</option>
+              <option>Claudicante</option>
+            </select>
+          </div>
         </div>
       </section>
 
       <!-- 4. HALLAZGOS -->
       <section class="form-section">
-        <h3>4. Hallazgos</h3>
+        <h3>4. Hallazgos Palpatorios y Segmentarios</h3>
 
-        <div class="checkbox-group">
-          <label><input type="checkbox"> Cervical</label>
-          <label><input type="checkbox"> Torácica</label>
-          <label><input type="checkbox"> Lumbar</label>
-          <label><input type="checkbox"> Pélvica</label>
+        <div class="form-group full-width">
+          <label>Regiones afectadas</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox"> Cervical</label>
+            <label><input type="checkbox"> Torácica</label>
+            <label><input type="checkbox"> Lumbar</label>
+            <label><input type="checkbox"> Pélvica</label>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Niveles vertebrales</label>
+            <input type="text" placeholder="Ej. C2, T6-T7, L5">
+          </div>
+
+          <div class="form-group">
+            <label>Restricción principal</label>
+            <select>
+              <option>Rotación</option>
+              <option>Flexión</option>
+              <option>Extensión</option>
+              <option>Lateroflexión</option>
+            </select>
+          </div>
         </div>
       </section>
 
-      <!-- 5. IMPRESIÓN -->
+      <!-- 5. IMPRESIÓN CLÍNICA -->
       <section class="form-section">
-        <h3>5. Impresión Clínica</h3>
+        <h3>5. Impresión Clínica y Plan</h3>
 
-        <input type="text" placeholder="Diagnóstico">
+        <div class="form-group full-width">
+          <label>Diagnóstico Quiropráctico</label>
+          <input type="text">
+        </div>
+
+        <div class="form-group full-width">
+          <label>Técnicas aplicadas</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox"> Diversified</label>
+            <label><input type="checkbox"> Gonstead</label>
+            <label><input type="checkbox"> Activator</label>
+            <label><input type="checkbox"> Thompson</label>
+            <label><input type="checkbox"> SOT</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Frecuencia</label>
+          <input type="text">
+        </div>
       </section>
 
       <button class="btn-primary">Guardar Historia Clínica</button>
@@ -125,9 +209,8 @@
     </form>
   </div>
 
-  <!-- ================= RIGHT PANEL ================= -->
+  <!-- PANEL DERECHO -->
   <div class="right-panel">
-
     <div class="body-map-container">
       <h3>Selector Corporal</h3>
 
@@ -143,28 +226,27 @@
         <span id="selectedZones">Ninguna</span>
       </div>
     </div>
-
   </div>
 
 </div>
 
 <script>
-  const zones = document.querySelectorAll(".body-zone");
-  const output = document.getElementById("selectedZones");
-  let selected = [];
+const zones = document.querySelectorAll(".body-zone");
+const output = document.getElementById("selectedZones");
+let selected = [];
 
-  zones.forEach(zone => {
-    zone.addEventListener("click", () => {
-      const name = zone.dataset.zone;
-      zone.classList.toggle("active");
+zones.forEach(zone => {
+  zone.addEventListener("click", () => {
+    const name = zone.dataset.zone;
+    zone.classList.toggle("active");
 
-      selected.includes(name)
-        ? selected = selected.filter(z => z !== name)
-        : selected.push(name);
+    selected.includes(name)
+      ? selected = selected.filter(z => z !== name)
+      : selected.push(name);
 
-      output.textContent = selected.length ? selected.join(", ") : "Ninguna";
-    });
+    output.textContent = selected.length ? selected.join(", ") : "Ninguna";
   });
+});
 </script>
 
 </body>

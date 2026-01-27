@@ -1,123 +1,124 @@
-:root {
-    --primary-green: #2ecc71;
-    --dark-bg: #2c3e50;
-    --light-gray: #f4f7f6;
-    --border-color: #ddd;
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    background-color: var(--light-gray);
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+  margin: 0;
+  background: #f4f6f8;
 }
 
-/* Header */
-.main-header {
-    background: #333;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.topbar {
+  background: #3a3a3a;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-.logo span { color: var(--primary-green); font-weight: bold; }
-
-nav a {
-    color: #ccc;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 14px;
+.btn-dashboard {
+  background: #5cb85c;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  cursor: pointer;
 }
 
-nav a.active { color: var(--primary-green); border-bottom: 2px solid var(--primary-green); }
+.container {
+  display: flex;
+  height: calc(100vh - 50px);
+}
 
-/* Layout */
-.container { display: flex; flex: 1; overflow: hidden; }
-
+/* SIDEBAR */
 .sidebar {
-    width: 250px;
-    background: #fff;
-    border-right: 1px solid var(--border-color);
-    padding: 20px;
+  width: 260px;
+  background: #ffffff;
+  border-right: 1px solid #ccc;
+  padding: 10px;
 }
 
-.filter-group { margin-bottom: 20px; }
-.filter-group label { display: block; font-size: 13px; margin-bottom: 5px; color: #666; }
-
-select, .btn-search {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
-.btn-search {
-    background-color: var(--primary-green);
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
+.mini-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
 }
 
-/* Agenda Grid */
-.calendar-view { flex: 1; padding: 20px; overflow-y: auto; background: white; }
-
-.calendar-toolbar {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+.mini-calendar div {
+  text-align: center;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 12px;
 }
 
-.grid-container {
-    display: flex;
-    border: 1px solid var(--border-color);
+.mini-calendar .active {
+  background: #5cb85c;
+  color: white;
 }
 
-.time-column { width: 60px; border-right: 1px solid var(--border-color); }
+/* AGENDA */
+.agenda {
+  flex: 1;
+  overflow: auto;
+}
+
+.agenda-header {
+  display: grid;
+  grid-template-columns: 70px repeat(5, 1fr);
+  background: #e9ecef;
+  border-bottom: 1px solid #ccc;
+}
+
+.provider {
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  border-left: 1px solid #ccc;
+}
+
+.time-column {
+  background: #f8f9fa;
+}
+
+/* GRID HORAS */
+.agenda-body {
+  display: grid;
+  grid-template-columns: 70px repeat(5, 1fr);
+}
 
 .time-slot {
-    height: 40px;
-    font-size: 12px;
-    text-align: center;
-    line-height: 40px;
-    border-bottom: 1px solid #eee;
+  height: 40px;
+  border-bottom: 1px solid #ddd;
+  font-size: 11px;
+  padding: 2px;
+  text-align: right;
+  color: #666;
 }
 
-.appointments-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 40px;
-    flex: 1;
-    position: relative;
+.cell {
+  border-bottom: 1px solid #eee;
+  border-left: 1px solid #eee;
+  position: relative;
 }
 
-.doc-header {
-    background: #f9f9f9;
-    text-align: center;
-    font-weight: bold;
-    border-bottom: 1px solid var(--border-color);
-    border-left: 1px solid var(--border-color);
-    height: 40px;
-    line-height: 40px;
-}
-
-/* Appointment Styles */
+/* CITAS */
 .appointment {
-    margin: 2px;
-    padding: 5px;
-    border-radius: 4px;
-    font-size: 11px;
-    color: #333;
-    border-left: 4px solid rgba(0,0,0,0.1);
-    z-index: 10;
+  position: absolute;
+  left: 5%;
+  width: 90%;
+  border-radius: 4px;
+  padding: 4px;
+  font-size: 11px;
+  color: #333;
 }
 
-.blue { background-color: #87cefa; }
-.pink { background-color: #f06292; color: white; }
-.yellow { background-color: #fff176; }
-
-.time-tag { font-weight: bold; display: block; margin-bottom: 3px; }
+.blue { background: #7ecbff; }
+.pink { background: #f6a5e3; }
+.green { background: #b9f2a1; }
+.yellow { background: #ffe29a; }

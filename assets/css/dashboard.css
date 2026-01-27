@@ -163,3 +163,44 @@ header p {
     grid-template-columns: 1fr;
   }
 }
+/* RESPONSIVE - MÓVIL */
+@media (max-width: 768px) {
+
+  /* Sidebar colapsa y se oculta */
+  .sidebar {
+    display: none;
+  }
+
+  /* Main content ocupa todo el ancho */
+  .main-content {
+    padding: 20px;
+  }
+
+  /* Header con botón de cerrar sesión se vuelve vertical si hace falta */
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* Cards de acciones rápidas apiladas */
+  .quick-actions {
+    grid-template-columns: 1fr; /* Una columna */
+    gap: 15px;
+  }
+
+  /* Gráficas apiladas verticalmente */
+  .charts {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Ajuste del tamaño del botón de cerrar sesión */
+  .logout-btn {
+    align-self: flex-end; /* Para mantenerlo a la derecha */
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 16px;
+  }
+}

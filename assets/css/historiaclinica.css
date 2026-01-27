@@ -1,113 +1,322 @@
+/* ===========================
+   VARIABLES DE DISEÑO
+=========================== */
 :root {
-  --primary:#1e88e5;
-  --accent:#00bfa5;
-  --bg:#f4f6f8;
-  --white:#fff;
-  --shadow:0 10px 30px rgba(0,0,0,.08);
+  --primary: #1e88e5;
+  --primary-soft: #e3f2fd;
+  --accent: #00bfa5;
+  --bg: #f5f7fa;
+  --white: #ffffff;
+  --text-dark: #263238;
+  --text-light: #607d8b;
+  --border: #e0e0e0;
+  --shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+/* ===========================
+   RESET
+=========================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
 }
 
 body {
-  margin:0;
-  font-family:Inter, system-ui;
-  background:var(--bg);
+  background: var(--bg);
+  color: var(--text-dark);
+  min-height: 100vh;
 }
 
+/* ===========================
+   LAYOUT GENERAL
+=========================== */
 .form-container {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  min-height:100vh;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  min-height: 100vh;
 }
 
-/* LEFT */
+/* ===========================
+   PANEL IZQUIERDO
+=========================== */
 .left-panel {
-  background:var(--white);
-  padding:40px;
-  overflow-y:auto;
+  background: var(--white);
+  padding: 42px 48px;
+  overflow-y: auto;
 }
 
-/* RIGHT */
-.right-panel {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(180deg,#e3f2fd,#fff);
+h1 {
+  font-size: 2.3rem;
+  color: var(--primary);
+  margin-bottom: 4px;
 }
 
+h2 {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-bottom: 36px;
+}
+
+/* ===========================
+   FORMULARIO
+=========================== */
+.clinical-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===========================
+   SECCIONES
+=========================== */
 .form-section {
-  background:#e3f2fd;
-  padding:24px;
-  border-radius:16px;
-  margin-bottom:24px;
+  background: var(--primary-soft);
+  border-radius: 18px;
+  padding: 26px;
+  margin-bottom: 30px;
+  border-left: 6px solid var(--primary);
 }
 
+.form-section h3 {
+  font-size: 1.15rem;
+  color: var(--primary);
+  margin-bottom: 22px;
+}
+
+/* ===========================
+   SUBSECCIÓN
+=========================== */
+.subsection {
+  background: rgba(255,255,255,0.7);
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.subsection h4 {
+  font-size: 1rem;
+  margin-bottom: 16px;
+  color: var(--accent);
+}
+
+/* ===========================
+   GRID FORMULARIO
+=========================== */
 .form-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
 }
 
-input, select {
-  padding:12px;
-  border-radius:10px;
-  border:1px solid #ccc;
+.form-group {
+  display: flex;
+  flex-direction: column;
 }
 
+.form-group label {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-bottom: 6px;
+}
+
+/* ===========================
+   INPUTS & SELECT
+=========================== */
+input,
+select {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+  background: var(--white);
+  transition: all 0.25s ease;
+}
+
+input::placeholder {
+  color: #b0bec5;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(30,136,229,0.15);
+}
+
+/* ===========================
+   CHECKBOXES PREMIUM
+=========================== */
 .checkbox-group {
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
+.checkbox-group label {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.checkbox-group label:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.checkbox-group input {
+  accent-color: var(--primary);
+}
+
+/* ===========================
+   EVA GRID
+=========================== */
+.eva-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 14px;
+}
+
+.eva-grid label {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-bottom: 4px;
+}
+
+/* ===========================
+   FULL WIDTH
+=========================== */
+.full-width {
+  grid-column: 1 / -1;
+}
+
+/* ===========================
+   BOTÓN
+=========================== */
 .btn-primary {
-  width:100%;
-  padding:16px;
-  border:none;
-  border-radius:14px;
-  background:linear-gradient(135deg,var(--primary),var(--accent));
-  color:#fff;
-  font-weight:600;
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 16px;
+  border: none;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* BODY MAP */
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 42px rgba(0,0,0,0.15);
+}
+
+/* ===========================
+   PANEL DERECHO
+=========================== */
+.right-panel {
+  background: linear-gradient(180deg, #e3f2fd, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+/* ===========================
+   BODY MAP
+=========================== */
 .body-map-container {
-  background:#fff;
-  padding:30px;
-  border-radius:24px;
-  box-shadow:var(--shadow);
-  text-align:center;
+  background: var(--white);
+  padding: 28px;
+  border-radius: 30px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  width: 100%;
+  max-width: 360px;
 }
 
+.body-map-container h3 {
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+/* SILUETA */
 .body-map {
-  position:relative;
-  width:140px;
-  height:420px;
-  margin:auto;
-  background:#cfd8dc;
-  border-radius:80px;
+  position: relative;
+  width: 140px;
+  height: 420px;
+  margin: 0 auto 20px;
+  background: linear-gradient(to bottom, #cfd8dc, #eceff1);
+  border-radius: 80px;
 }
 
+/* ZONAS */
 .body-zone {
-  position:absolute;
-  left:50%;
-  transform:translateX(-50%);
-  width:90px;
-  padding:6px;
-  border-radius:20px;
-  cursor:pointer;
-  background:rgba(30,136,229,.2);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92px;
+  border-radius: 20px;
+  padding: 6px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  background: rgba(30,136,229,0.15);
+  color: var(--primary);
+  transition: all 0.25s ease;
+  user-select: none;
 }
 
+.body-zone:hover {
+  background: rgba(30,136,229,0.3);
+}
+
+/* POSICIONES */
+.cervical { top: 40px; height: 40px; }
+.thoracic { top: 90px; height: 110px; }
+.lumbar { top: 220px; height: 80px; }
+.sacral { top: 310px; height: 60px; }
+
+/* ACTIVO */
 .body-zone.active {
-  background:linear-gradient(135deg,var(--primary),var(--accent));
-  color:#fff;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
-.cervical{top:40px}
-.thoracic{top:100px;height:100px}
-.lumbar{top:230px}
-.sacral{top:300px}
+/* TEXTO */
+.selected-zones {
+  font-size: 0.85rem;
+  color: var(--text-dark);
+}
 
-/* MOBILE */
-@media(max-width:900px){
-  .form-container{grid-template-columns:1fr}
+/* ===========================
+   SCROLL ELEGANTE
+=========================== */
+.left-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.left-panel::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 900px) {
+  .form-container {
+    grid-template-columns: 1fr;
+  }
+
+  .right-panel {
+    order: -1;
+  }
 }

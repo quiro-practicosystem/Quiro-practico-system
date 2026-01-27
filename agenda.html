@@ -1,50 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Agenda de Citas</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/css/agenda.css">
+    <meta charset="UTF-8">
+    <title>AgendaPro Clone - Funcional</title>
+    <link rel="stylesheet" href="assets/css/agenda.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <header class="main-header">
+        <div class="logo">agenda<span>pro</span></div>
+        <div class="header-right">
+            <input type="text" placeholder="Busqueda Rápida" class="search-bar">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </header>
 
-<header class="topbar">
-  <button class="btn-dashboard">← Dashboard</button>
-  <h1>Calendario</h1>
-</header>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="filter-box">
+                <label>Elige el Prestador</label>
+                <select id="prestadorFilter"><option>Todos</option></select>
+            </div>
+            <div class="mini-calendar" id="miniCal">
+                </div>
+        </aside>
 
-<div class="container">
+        <main class="main-content">
+            <div class="calendar-header">
+                <h2 id="currentDateDisplay">Lunes, 07 Dic 2020</h2>
+                <div class="button-group">
+                    <button class="btn btn-green" onclick="openModal()"><i class="fas fa-plus"></i> Agendar Reserva</button>
+                    <button class="btn btn-red"><i class="fas fa-ban"></i> Bloquear</button>
+                </div>
+            </div>
 
-  <!-- PANEL IZQUIERDO -->
-  <aside class="sidebar">
-    <div class="calendar-header">
-      <button id="prevMonth">‹</button>
-      <span id="monthYear"></span>
-      <button id="nextMonth">›</button>
+            <div class="agenda-wrapper">
+                <div class="time-gutter" id="timeGutter"></div>
+                <div class="agenda-grid" id="agendaGrid">
+                    </div>
+            </div>
+        </main>
     </div>
-    <div id="miniCalendar" class="mini-calendar"></div>
-  </aside>
 
-  <!-- AGENDA -->
-  <main class="agenda">
-
-    <!-- CABECERA PRESTADORES -->
-    <div class="agenda-header">
-      <div class="time-column"></div>
-      <div class="provider">Camilo</div>
-      <div class="provider">Francisca</div>
-      <div class="provider">Juan</div>
-      <div class="provider">María Paz</div>
-      <div class="provider">Valentina</div>
+    <div id="appointmentModal" class="modal">
+        <div class="modal-content">
+            <h3>Nueva Cita Médica</h3>
+            <input type="text" id="patientName" placeholder="Nombre del Paciente">
+            <select id="docSelect">
+                <option value="0">Camilo</option>
+                <option value="1">Francisca</option>
+                <option value="2">Juan</option>
+                <option value="3">María Paz</option>
+            </select>
+            <input type="time" id="startTime">
+            <div class="modal-buttons">
+                <button onclick="saveAppointment()" class="btn btn-green">Guardar</button>
+                <button onclick="closeModal()" class="btn">Cancelar</button>
+            </div>
+        </div>
     </div>
-
-    <!-- GRID -->
-    <div class="agenda-body" id="agendaBody"></div>
-
-  </main>
-
-</div>
-
-<script src="assets/js/agenda.js"></script>
 </body>
 </html>

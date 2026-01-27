@@ -5,36 +5,30 @@
   <title>Agenda</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- FullCalendar -->
+  <!-- FullCalendar + Scheduler -->
   <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css" rel="stylesheet">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/agenda.css">
 </head>
 <body>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <img src="assets/images/logo.png" class="sidebar-logo" alt="Logo">
-  </aside>
+<main class="agenda-wrapper">
 
-  <!-- CONTENIDO -->
-  <main class="main-content">
+  <header class="agenda-header">
+    <h2>Agenda</h2>
+    <div class="agenda-controls">
+      <button id="todayBtn">Hoy</button>
+      <button id="prevBtn">‹</button>
+      <button id="nextBtn">›</button>
+    </div>
+  </header>
 
-    <header class="agenda-header">
-      <h1>Agenda</h1>
-      <a href="dashboard.html" class="back-btn">Volver</a>
-    </header>
+  <div id="calendar"></div>
 
-    <section class="calendar-container">
-      <div id="calendar"></div>
-    </section>
+</main>
 
-  </main>
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
-  <script src="assets/js/agenda.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+<script src="assets/js/agenda.js"></script>
 
 </body>
 </html>

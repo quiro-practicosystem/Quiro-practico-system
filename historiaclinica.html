@@ -228,11 +228,6 @@
 
     </form>
   </div>
-<section class="form-section">
-  <h3>Historia Clínica Generada</h3>
-  <textarea id="generatedText" rows="20" readonly style="width:100%; padding:12px; border-radius:10px; border:1px solid #ccc;"></textarea>
-</section>
-  
   <!-- PANEL DERECHO -->
   <div class="right-panel">
     <div class="body-map-container">
@@ -364,78 +359,6 @@ zones.forEach(zone => {
     output.textContent = allSelected.length ? allSelected.join(", ") : "Ninguna";
   });
 });
-</script>
-
-<script>
-document.querySelector(".btn-primary").addEventListener("click", function(e) {
-  e.preventDefault(); // evita que se recargue la página
-
-  // 1. Paciente y fecha
-  const paciente = document.querySelector('input[placeholder="Ej. Nombre del paciente"]').value || "________________";
-  const fecha = new Date().toLocaleDateString("es-MX", { day: "2-digit", month: "long", year: "numeric" });
-
-  // 2. Motivo de consulta
-  const dolorDesc = document.querySelector('input[placeholder="Ej. Dolor lumbar"]').value || "________________";
-  const irradiacion = document.querySelector('input[placeholder="Ej. Pierna derecha"]').value || "________________";
-  const evolucion = document.querySelector('input[placeholder="Ej. 3 semanas"]').value || "________________";
-
-  // Síntomas asociados
-  const sintomas = Array.from(document.querySelectorAll('section:nth-of-type(2) .checkbox-group input:checked'))
-                      .map(cb => cb.parentElement.textContent.trim())
-                      .join(", ") || "________________";
-
-  // Dificultades
-  const dificultades = Array.from(document.querySelectorAll('section:nth-of-type(2) .form-group:nth-of-type(4) input:checked'))
-                      .map(cb => cb.parentElement.textContent.trim())
-                      .join(", ") || "________________";
-
-  // Tipos de dolor y EVA
-  const tiposDolor = Array.from(document.querySelectorAll('.eva-grid div input'))
-                    .map(input => {
-                      const label = input.previousElementSibling.textContent.trim();
-                      const valor = input.value || "0";
-                      return `${label} ${valor}/10`;
-                    })
-                    .join(", ");
-
-  // 3. Análisis postural
-  const planoFrontal = document.querySelector('select:nth-of-type(1)').value || "________________";
-  const planoSagital = document.querySelector('select:nth-of-type(2)').value || "________________";
-  const marcha = document.querySelector('select:nth-of-type(3)').value || "________________";
-
-  // 4. Hallazgos
-  const cervical = document.querySelector('input[placeholder="Ej. C2, T6-T7, L5"]').value || "________________";
-  const restriccion = document.querySelector('select:nth-of-type(4)').value || "________________";
-
-  // 5. Impresión clínica y plan
-  const diagnostico = document.querySelector('section:nth-of-type(5) input[type="text"]').value || "________________";
-
-  // Generar texto
-  const historia = `
-Historia Clínica
-Paciente: "${paciente}"
-Fecha: ${fecha}
-
-1. Motivo de Consulta: "${dolorDesc}"
-El paciente presenta "${dolorDesc}" con irradiación hacia "${irradiacion}", con una evolución de "${evolucion}". Reporta "${sintomas}" y "${dificultades}". El dolor se describe como "${tiposDolor}".
-
-2. Análisis Postural y Dinámico
-Plano Frontal: "${planoFrontal}"
-Plano Sagital: "${planoSagital}"
-Marcha: "${marcha}"
-
-3. Hallazgos Palpatorios y Segmentarios
-Cervical: "${cervical}" con restricción en "${restriccion}"
-
-4. Impresión Clínica y Plan de Acción
-Diagnóstico Quiropráctico: "${diagnostico}"
-`;
-
-  document.getElementById("generatedText").value = historia;
-
-});
-</script>
-
-  
+</script> 
 </body>
 </html>

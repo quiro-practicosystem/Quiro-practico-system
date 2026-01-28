@@ -319,8 +319,8 @@ let irradiacion = [];
 zones.forEach(zone => {
   zone.addEventListener("click", () => {
     const region = zone.dataset.zone;
-    const side = zone.dataset.side;
-    const label = `${region} ${side}`;
+    const side = zone.dataset.side ? ` ${zone.dataset.side}` : ""; // <- corrección
+    const label = `${region}${side}`;
     const mode = modeSelect.value;
 
     if (mode === "principal") {
@@ -335,12 +335,13 @@ zones.forEach(zone => {
 
       // Sincroniza con checkboxes
       zonaCheckboxes.forEach(cb => {
+        // Coincide con la zona completa o solo la región base
         if (cb.value === label || cb.value === region) {
           cb.checked = principal.includes(label);
         }
       });
 
-    } else {
+    } else if (mode === "irradiacion") {
       zone.classList.toggle("irradiacion");
 
       // Actualiza array de irradiación
